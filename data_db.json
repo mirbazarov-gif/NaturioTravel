@@ -1,0 +1,509 @@
+{
+  "tours": [
+    {
+      "id": "tour-1",
+      "title": {
+        "EN": "Kol-Ukok Lake Horseback Expedition",
+        "RU": "Конный тур на горное озеро Коль-Укок"
+      },
+      "category": "Horse Trekking",
+      "destination": {
+        "EN": "Kol-Ukok Lake",
+        "RU": "Озеро Коль-Укок"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1200",
+      "price": 180,
+      "originalPrice": 220,
+      "duration": {
+        "EN": "2 Days",
+        "RU": "2 Дня"
+      },
+      "rating": 4.9,
+      "reviews": 142,
+      "description": {
+        "EN": "Ride sturdy Kyrgyz horses from Ukok village to the crystal-clear alpine lake Kol-Ukok at 3,000m. Sleep in authentic shepherd yurts, taste fresh kymyz, and listen to the whisper of mountain wind.",
+        "RU": "Надежные кыргызские кони пронесут вас от села Укок к хрустальному альпийскому озеру Коль-Укок на высоту 3000 м. Ночевка в настоящих юртах чабанов, дегустация свежего кумыса и шепот горного ветра."
+      },
+      "dates": ["Jul 22 - Jul 23", "Aug 05 - Aug 06", "Aug 19 - Aug 20"],
+      "maxGroupSize": 8,
+      "highlights": {
+        "EN": [
+          "Epic horse ride up the Ukok river canyon",
+          "Overnight stay in a remote lakeside yurt camp",
+          "Authentic home-cooked nomadic meals",
+          "Option to hike to the upper Kol-Tor lake"
+        ],
+        "RU": [
+          "Конный подъем по ущелью реки Укок",
+          "Ночь в отдаленном юрточном лагере у озера",
+          "Аутентичная домашняя кухня кочевников",
+          "Возможность треккинга к верхнему озеру Коль-Тор"
+        ]
+      },
+      "weatherLocation": "Kochkor",
+      "liveAvailability": 5
+    },
+    {
+      "id": "tour-2",
+      "title": {
+        "EN": "Song-Kul Lake Classic Horse Trek (via Kilemche)",
+        "RU": "Конный тур на Сон-Куль через пастбище Килемче"
+      },
+      "category": "Horse Trekking",
+      "destination": {
+        "EN": "Song-Kul Lake",
+        "RU": "Озеро Сон-Куль"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?q=80&w=1200",
+      "price": 290,
+      "originalPrice": 340,
+      "duration": {
+        "EN": "3 Days",
+        "RU": "3 Дня"
+      },
+      "rating": 4.95,
+      "reviews": 186,
+      "description": {
+        "EN": "The most beloved path to the sacred lake Song-Kul. Start in Kyzart, ride across Kilemche's lush meadows, and cross the spectacular Jalgyz-Karagay Pass at 3,300m to view the majestic blue waters.",
+        "RU": "Самый любимый маршрут к священному высокогорному озеру Сон-Куль. Начните в Кызарте, пройдите через сочные луга Килемче и преодолейте перевал Жалгыз-Карагай (3300 м) ради потрясающего вида."
+      },
+      "dates": ["Jul 24 - Jul 26", "Aug 10 - Aug 12", "Sep 01 - Sep 03"],
+      "maxGroupSize": 10,
+      "highlights": {
+        "EN": [
+          "Scenic ride over Jalgyz-Karagay mountain pass",
+          "Yurt stay directly on the shores of Song-Kul",
+          "Witness traditional sheep milking and cheese making",
+          "Milky Way stargazing at 3,016m elevation"
+        ],
+        "RU": [
+          "Живописный перевал Жалгыз-Карагай",
+          "Юрты прямо на берегу озера Сон-Куль",
+          "Демонстрация дойки овец и варки сыра курут",
+          "Созерцание звездного неба и Млечного Пути на 3016 м"
+        ]
+      },
+      "weatherLocation": "Song-Kul",
+      "liveAvailability": 6
+    },
+    {
+      "id": "tour-3",
+      "title": {
+        "EN": "Nomadic Heart: Sarala-Saz Valley Horse Ride",
+        "RU": "Конное приключение в долину Сары-Ала-Саз"
+      },
+      "category": "Horse Trekking",
+      "destination": {
+        "EN": "Kochkor Valley",
+        "RU": "Долина Кочкор"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1544085311-11a028465b03?q=80&w=1200",
+      "price": 150,
+      "originalPrice": 180,
+      "duration": {
+        "EN": "2 Days",
+        "RU": "2 Дня"
+      },
+      "rating": 4.88,
+      "reviews": 67,
+      "description": {
+        "EN": "An off-the-beaten-path horseback trip to the pristine Sarala-Saz valley. Meet welcoming shepherd families who spend summers grazing herds of horses, sheep, and cattle under huge skies.",
+        "RU": "Эксклюзивный конный поход в дикую долину Сары-Ала-Саз. Познакомьтесь с гостеприимными чабанами, пасущими табуны лошадей и стада овец под куполом бескрайнего неба."
+      },
+      "dates": ["Jul 28 - Jul 29", "Aug 12 - Aug 13", "Aug 26 - Aug 27"],
+      "maxGroupSize": 8,
+      "highlights": {
+        "EN": [
+          "Uncrowded trails and pristine alpine pastures",
+          "In-depth look at traditional horse-breeding customs",
+          "Traditional tea ceremony with mountain honey and boorsok",
+          "Overnight in a genuine nomad family yurt"
+        ],
+        "RU": [
+          "Нехоженые тропы и нетронутые альпийские пастбища",
+          "Знакомство с традициями коневодства",
+          "Чаепитие со свежим горным медом и горячими боорсоками",
+          "Ночевка в настоящей семейной юрте чабана"
+        ]
+      },
+      "weatherLocation": "Kochkor",
+      "liveAvailability": 4
+    },
+    {
+      "id": "tour-4",
+      "title": {
+        "EN": "Song-Kul Lake Alpine Trekking (On Foot)",
+        "RU": "Пеший треккинг на озеро Сон-Куль через перевалы"
+      },
+      "category": "Hiking & Trekking",
+      "destination": {
+        "EN": "Song-Kul Lake",
+        "RU": "Озеро Сон-Куль"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200",
+      "price": 210,
+      "originalPrice": 250,
+      "duration": {
+        "EN": "3 Days",
+        "RU": "3 Дня"
+      },
+      "rating": 4.85,
+      "reviews": 92,
+      "description": {
+        "EN": "Hike on foot through breathtaking valleys and pine forests, ascending slowly to the high plateaus of Song-Kul. Your luggage is carried on pack-horses while you enjoy the majestic alpine landscape.",
+        "RU": "Пеший поход сквозь захватывающие дух ущелья и хвойные перелески с постепенным выходом к зеркалу Сон-Куля. Ваш багаж перевозят вьючные лошади, позволяя вам наслаждаться пейзажами."
+      },
+      "dates": ["Aug 02 - Aug 04", "Aug 16 - Aug 18", "Sep 05 - Sep 07"],
+      "maxGroupSize": 12,
+      "highlights": {
+        "EN": [
+          "Cross high altitude mountain ridge on foot",
+          "Luggage transported safely by pack horses",
+          "Delicious warm field meals cooked by your local guide",
+          "Experience pure silence of the high-altitude pastures"
+        ],
+        "RU": [
+          "Пеший подъем на высокий хребет",
+          "Удобная транспортировка багажа вьючными конями",
+          "Горячее походное питание от вашего местного гида",
+          "Ощущение первозданной тишины высокогорных джайлоо"
+        ]
+      },
+      "weatherLocation": "Kyzart",
+      "liveAvailability": 8
+    },
+    {
+      "id": "tour-5",
+      "title": {
+        "EN": "Eagle Hunter Demonstration & Felt Art Show",
+        "RU": "Шоу беркутчи и мастер-класс по войлоку в Кочкоре"
+      },
+      "category": "Cultural Heritage",
+      "destination": {
+        "EN": "Kochkor Valley",
+        "RU": "Долина Кочкор"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200",
+      "price": 85,
+      "originalPrice": 110,
+      "duration": {
+        "EN": "1 Day",
+        "RU": "1 День"
+      },
+      "rating": 4.97,
+      "reviews": 210,
+      "description": {
+        "EN": "Discover ancient nomadic hunting and craftsmanship. Witness a private golden eagle flight show by a hereditary hunter (Berkutchi), and join local craftswomen in making traditional felt carpets (Shyrdak).",
+        "RU": "Погружение в древние охотничьи традиции и ремесла. Вы увидите полет золотого орла от потомственного охотника-беркутчи и сделаете свой сувенир из войлока с мастерицами."
+      },
+      "dates": ["Daily Departures on Request"],
+      "maxGroupSize": 15,
+      "highlights": {
+        "EN": [
+          "Up-close demonstration of golden eagle hunting speed",
+          "Hands-on Shyrdak felt-making mosaic masterclass",
+          "Rich family-style lunch with traditional Kyrgyz folklore music",
+          "Take home your own handmade felt souvenir"
+        ],
+        "RU": [
+          "Демонстрация охотничьего мастерства беркута",
+          "Мастер-класс по вырезанию узоров ковра Шырдак",
+          "Обед в кыргызской семье с живой фольклорной музыкой",
+          "Памятный войлочный сувенир, сделанный своими руками"
+        ]
+      },
+      "weatherLocation": "Kochkor",
+      "liveAvailability": 12
+    },
+    {
+      "id": "tour-6",
+      "title": {
+        "EN": "Nomadic Yurt Assembly & National Horse Games",
+        "RU": "Интерактивный сбор юрты и национальные конные игры"
+      },
+      "category": "Cultural Heritage",
+      "destination": {
+        "EN": "Kochkor Valley",
+        "RU": "Долина Кочкор"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200",
+      "price": 120,
+      "originalPrice": 150,
+      "duration": {
+        "EN": "1 Day",
+        "RU": "1 День"
+      },
+      "rating": 4.96,
+      "reviews": 118,
+      "description": {
+        "EN": "An interactive cultural feast near Kochkor. Work with nomads to construct a traditional wooden yurt from scratch, and sit on the hillside to watch breathtaking equestrian games like Kok-Boru (polo with a twist) and Kyz-Kuumai.",
+        "RU": "Интерактивный праздник кочевой культуры. Соберите деревянную юрту вместе с чабанами, а затем наблюдайте за конными состязаниями: Кок-Бору, Кыз-Куумай и Эр-Эниш."
+      },
+      "dates": ["Weekly Every Saturday (May-Sep)", "Private bookings on request"],
+      "maxGroupSize": 25,
+      "highlights": {
+        "EN": [
+          "Hands-on experience assembling the yurt's dome (Tunduk)",
+          "Watch spectacular equestrian sports and archery shows",
+          "Taste freshly baked Boorsok bread with mountain ghee",
+          "Learn the deep spiritual meaning of yurt construction"
+        ],
+        "RU": [
+          "Участие в поднятии купола юрты — Тюндюка",
+          "Зрелищные конные состязания и стрельба из лука",
+          "Дегустация горячих боорсоков со свежим каймаком",
+          "Знакомство с сакральным смыслом устройства юрты"
+        ]
+      },
+      "weatherLocation": "Kochkor",
+      "liveAvailability": 15
+    },
+    {
+      "id": "tour-7",
+      "title": {
+        "EN": "Song-Kul Lake Northern Shore & Tuz-Ashuu Pass",
+        "RU": "Большой конный тур вокруг Сон-Куля через перевал Туз-Ашуу"
+      },
+      "category": "Horse Trekking",
+      "destination": {
+        "EN": "Song-Kul Lake",
+        "RU": "Озеро Сон-Куль"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1566121318594-a834e355d144?q=80&w=1200",
+      "price": 380,
+      "originalPrice": 440,
+      "duration": {
+        "EN": "4 Days",
+        "RU": "4 Дня"
+      },
+      "rating": 4.92,
+      "reviews": 75,
+      "description": {
+        "EN": "An immersive 4-day loop covering the best-kept secrets of the northern shores of Song-Kul. Ride past pristine springs, stay in authentic shepherd yurt settlements, and descend via the dramatic serpentines of Tuz-Ashuu pass.",
+        "RU": "Четырехдневный глубокий поход вокруг северного берега озера Сон-Куль. Вы проедете чистейшие родники, погостите у семей чабанов и спуститесь по серпантинам перевала Туз-Ашуу."
+      },
+      "dates": ["Jul 18 - Jul 21", "Aug 08 - Aug 11", "Aug 22 - Aug 25"],
+      "maxGroupSize": 6,
+      "highlights": {
+        "EN": [
+          "Full horseback exploration of Song-Kul's quiet northern side",
+          "Stay with three different multi-generational nomadic host families",
+          "Cross spectacular Tuz-Ashuu pass at 3,220m with scenic valley views",
+          "Traditional cooking and baking masterclasses around the stove"
+        ],
+        "RU": [
+          "Конное исследование тихого северного берега Сон-Куля",
+          "Ночевки у трех разных семей потомственных чабанов",
+          "Спуск по захватывающему серпантину перевала Туз-Ашуу (3220 м)",
+          "Мастер-классы по приготовлению национальных блюд на печи"
+        ]
+      },
+      "weatherLocation": "Song-Kul",
+      "liveAvailability": 4
+    },
+    {
+      "id": "tour-8",
+      "title": {
+        "EN": "Glacier Lakes Trek: Kol-Ukok to Kol-Tor Peak",
+        "RU": "Поход к двум озерам: от Коль-Укок к ледниковому Коль-Тор"
+      },
+      "category": "Hiking & Trekking",
+      "destination": {
+        "EN": "Kol-Ukok Lake",
+        "RU": "Озеро Коль-Укок"
+      },
+      "country": {
+        "EN": "Kyrgyzstan",
+        "RU": "Кыргызстан"
+      },
+      "image": "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=1200",
+      "price": 260,
+      "originalPrice": 310,
+      "duration": {
+        "EN": "3 Days",
+        "RU": "3 Дня"
+      },
+      "rating": 4.89,
+      "reviews": 53,
+      "description": {
+        "EN": "An active, physically rewarding trekking tour for avid hikers. Explore the turquoise beauty of lower Kol-Ukok lake, then climb the steep, rocky, glacial moraine to the upper frozen lake Kol-Tor at 3,400m.",
+        "RU": "Спортивный пеший тур для любителей треккинга. Исследуйте бирюзовое озеро Коль-Укок, а затем поднимитесь по крутой ледниковой морене к высокогорному озеру Коль-Тор на 3400 м."
+      },
+      "dates": ["Aug 05 - Aug 07", "Aug 19 - Aug 21", "Sep 02 - Sep 04"],
+      "maxGroupSize": 8,
+      "highlights": {
+        "EN": [
+          "Visit two completely different high alpine lakes in one trip",
+          "Witness the dramatic glacial landscapes and rugged moraines",
+          "Enjoy starry nights in our snug yurt basecamp",
+          "Certified local mountain rescue-trained trekking guide"
+        ],
+        "RU": [
+          "Посещение двух абсолютно разных высокогорных озер",
+          "Величественные панорамы ледников и каменных морен",
+          "Звездные вечера у печи в уютном базовом лагере юрт",
+          "Опытный горный сертифицированный гид-проводник"
+        ]
+      },
+      "weatherLocation": "Kochkor",
+      "liveAvailability": 5
+    }
+  ],
+  "destinations": [
+    {
+      "id": "dest-1",
+      "name": { "EN": "Song-Kul Lake", "RU": "Озеро Сон-Куль" },
+      "country": { "EN": "Kyrgyzstan", "RU": "Кыргызстан" },
+      "image": "https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?q=80&w=1200",
+      "description": {
+        "EN": "High-altitude alpine lake at 3,016m, pristine jailoo pastures, traditional yurts, and zero light pollution.",
+        "RU": "Высокогорное альпийское озеро на высоте 3016 м, нетронутые джайлоо, традиционные юрты и чистое звездное небо."
+      },
+      "rating": 4.95,
+      "priceFrom": 210,
+      "coordinates": { "x": 58, "y": 42 }
+    },
+    {
+      "id": "dest-2",
+      "name": { "EN": "Kol-Ukok Lake", "RU": "Озеро Коль-Укок" },
+      "country": { "EN": "Kyrgyzstan", "RU": "Кыргызстан" },
+      "image": "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1200",
+      "description": {
+        "EN": "Nicknamed 'lake in a chest', a hidden turquoise pearl surrounded by sharp peaks, perfect for horseback riders.",
+        "RU": "Скрытая бирюзовая жемчужина, окруженная крутыми пиками — идеальное место для конных прогулок из Кочкора."
+      },
+      "rating": 4.9,
+      "priceFrom": 180,
+      "coordinates": { "x": 62, "y": 43 }
+    },
+    {
+      "id": "dest-3",
+      "name": { "EN": "Kochkor Valley", "RU": "Долина Кочкор" },
+      "country": { "EN": "Kyrgyzstan", "RU": "Кыргызстан" },
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200",
+      "description": {
+        "EN": "The heartbeat of Kyrgyz craft tourism, world-renowned for handmade wool felt carpets and ancient traditions.",
+        "RU": "Центр кыргызского ремесленного туризма, всемирно известный коврами шырдак и вековыми традициями."
+      },
+      "rating": 4.98,
+      "priceFrom": 85,
+      "coordinates": { "x": 61, "y": 45 }
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "Svetlana Volkova",
+      "role": { "EN": "Ethnography Researcher", "RU": "Исследователь-этнограф" },
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200",
+      "rating": 5,
+      "text": {
+        "EN": "My horse trek to Kol-Ukok lake organized by NaturO was the highlight of my research. True nomad hospitality, preserved customs, and stunning landscapes.",
+        "RU": "Мой конный поход на Коль-Укок, организованный NaturO, стал главным событием поездки. Настоящее гостеприимство, бережно хранимые обычаи и сказочные пейзажи."
+      },
+      "location": { "EN": "Moscow, Russia", "RU": "Москва, Россия" }
+    },
+    {
+      "id": "test-2",
+      "name": "David Mercer",
+      "role": { "EN": "Adventure Photographer", "RU": "Приключенческий фотограф" },
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200",
+      "rating": 5,
+      "text": {
+        "EN": "Song-Kul is a paradise on earth. Staying in traditional felt yurts, waking up to the sight of wild horses, and zero light pollution made for stellar photos.",
+        "RU": "Сон-Куль — это рай на земле. Проживание в традиционных войлочных юртах, рассветы под ржание диких табунов лошадей и звездное небо без лишнего света."
+      },
+      "location": { "EN": "London, UK", "RU": "Лондон, Великобритания" }
+    },
+    {
+      "id": "test-3",
+      "name": "Aisuluu Mamytova",
+      "role": { "EN": "NaturO Kochkor Advocate", "RU": "Активист NaturO Кочкор" },
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200",
+      "rating": 5,
+      "text": {
+        "EN": "NaturO empowers local families, shepherds, and artisans. The felt making workshop in Kochkor directly supports our craft preservation. A perfect eco-partnership.",
+        "RU": "NaturO помогает местным чабанам и ремесленникам. Мастер-класс по войлоку в Кочкоре напрямую поддерживает наше наследие. Идеальное эко-партнерство."
+      },
+      "location": { "EN": "Bishkek, Kyrgyzstan", "RU": "Бишкек, Кыргызстан" }
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": "blog-1",
+      "title": {
+        "EN": "The Art of Shyrdak: Felt-Making Legacy in Kochkor",
+        "RU": "Искусство Шырдака: наследие войлока в Кочкоре"
+      },
+      "image": "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1200",
+      "date": { "EN": "July 15, 2026", "RU": "15 июля 2026 г." },
+      "readTime": { "EN": "5 min read", "RU": "5 мин чтения" },
+      "category": { "EN": "Nomadic Craft", "RU": "Ремесла Номадов" },
+      "author": "Aisuluu Mamytova",
+      "excerpt": {
+        "EN": "Discover the deep history behind Kyrgyz felt carpets, how ornaments represent water, mountain goats, and stars, and why Kochkor grandmothers are protecting it.",
+        "RU": "Узнайте историю кыргызских войлочных ковров шырдак, что означают узоры в виде горных козлов и звезд, и как кочкорские бабушки защищают это ремесло."
+      }
+    },
+    {
+      "id": "blog-2",
+      "title": {
+        "EN": "How to Plan Your First Alpine Horseback Ride to Song-Kul",
+        "RU": "Инструкция: твой первый конный поход на Сон-Куль"
+      },
+      "image": "https://images.unsplash.com/photo-1527853787696-f7be74f2e39a?q=80&w=1200",
+      "date": { "EN": "July 02, 2026", "RU": "2 июля 2026 г." },
+      "readTime": { "EN": "7 min read", "RU": "7 мин чтения" },
+      "category": { "EN": "Survival & Tips", "RU": "Советы туристам" },
+      "author": "Nurbek Usubaliev",
+      "excerpt": {
+        "EN": "A professional NaturO guide shares packing lists, safety tips, and horse-riding etiquette for navigating high altitude passes and staying in shepherd yurt camps.",
+        "RU": "Профессиональный гид NaturO делится списком вещей, правилами безопасности и этикетом езды на лошадях для прохождения перевалов и ночевок в юртах."
+      }
+    },
+    {
+      "id": "blog-3",
+      "title": {
+        "EN": "Yurt Etiquette: Honoring Traditional Nomad Hospitality",
+        "RU": "Этикет в юрте: законы традиционного гостеприимства"
+      },
+      "image": "https://images.unsplash.com/photo-1548574505-5e239809ee19?q=80&w=1200",
+      "date": { "EN": "June 18, 2026", "RU": "18 июня 2026 г." },
+      "readTime": { "EN": "4 min read", "RU": "4 мин чтения" },
+      "category": { "EN": "Nomad Culture", "RU": "Культура кочевников" },
+      "author": "Ermek Satybaldyev",
+      "excerpt": {
+        "EN": "Wander inside the architecture of the Kyrgyz yurt. Learn why you should never step on the threshold and how to respect the sacred upper dome (tunduk).",
+        "RU": "Исследуйте архитектуру кыргызской юрты. Узнайте, почему никогда нельзя наступать на порог и как выразить почтение священному верхнему куполу (тюндюку)."
+      }
+    }
+  ]
+}
