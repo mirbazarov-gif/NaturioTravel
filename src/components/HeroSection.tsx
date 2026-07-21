@@ -168,8 +168,8 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
             className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4 font-sans text-shadow-md"
           >
             {language === "RU" ? "Забронируйте Приключение" : "Reserve Your Next Adventure"}{" "}<br />
-            <span className="bg-gradient-to-r from-turquoise via-teal-300 to-gold-accent bg-clip-text text-transparent italic font-serif">
-              {language === "RU" ? "с местными гидами NaturO" : "with Community NaturO Guides"}
+            <span className="text-white italic font-serif">
+              {language === "RU" ? "с местными гидами Nomad Travel" : "with Community Nomad Travel Guides"}
             </span>
           </motion.h1>
 
@@ -180,8 +180,8 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
             className="text-sm md:text-base text-slate-200 font-medium tracking-wide leading-relaxed max-w-2xl mx-auto drop-shadow-md"
           >
             {language === "RU" 
-              ? "Оставьте заявку на бронирование прямо сейчас. Традиционное гостеприимство, честные цены и 100% поддержка местных сообществ." 
-              : "Submit your reservation request directly. Sustainable travel, transparent community rates, and deep cultural immersion."}
+              ? "Оформите заявку на индивидуальное планирование экспедиции. Безупречный сервис, персональный подход и легендарное гостеприимство." 
+              : "Submit your custom expedition request. Flawless logistical execution, bespoke itineraries, and absolute care."}
           </motion.p>
         </div>
 
@@ -199,17 +199,17 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                className="bg-slate-900/75 dark:bg-slate-950/75 backdrop-blur-2xl border border-white/10 dark:border-slate-800/60 p-6 md:p-8 rounded-3xl shadow-2xl"
+                className="bg-white/95 dark:bg-white backdrop-blur-2xl border border-slate-200/80 p-6 md:p-8 rounded-3xl shadow-2xl shadow-slate-900/10 text-slate-900"
               >
-                <div className="flex items-center gap-2 mb-6 border-b border-slate-800 pb-4">
+                <div className="flex items-center gap-2 mb-6 border-b border-slate-200 pb-4">
                   <div className="p-2 bg-turquoise/20 rounded-xl">
                     <BookOpen className="w-5 h-5 text-turquoise" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white uppercase tracking-wider">
+                    <h3 className="text-lg font-extrabold text-slate-900 uppercase tracking-wider">
                       {language === "RU" ? "Детали бронирования" : "Reservation details"}
                     </h3>
-                    <p className="text-xs text-slate-400">
+                    <p className="text-xs text-slate-500">
                       {language === "RU" ? "Заполните форму для оформления заказа" : "Fill out the form below to book your spot"}
                     </p>
                   </div>
@@ -219,19 +219,19 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {/* Select Tour */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                      <label className="block text-xs font-bold text-slate-600 mb-2 uppercase tracking-wider">
                         {language === "RU" ? "Выберите тур" : "Select Tour"}
                       </label>
-                      <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-800 px-4 py-3 rounded-2xl">
+                      <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200 px-4 py-3 rounded-2xl">
                         <MapPin className="w-5 h-5 text-turquoise shrink-0" />
                         <select
                           value={selectedTourId}
                           onChange={(e) => setSelectedTourId(e.target.value)}
-                          className="bg-transparent border-none text-white text-xs font-semibold w-full focus:outline-none [color-scheme:dark] cursor-pointer"
+                          className="bg-transparent border-none text-slate-800 text-xs font-semibold w-full focus:outline-none cursor-pointer"
                         >
                           {activeTours.map((t) => (
-                            <option key={t.id} value={t.id}>
-                              {(language === "RU" ? t.title?.RU || t.title : t.title?.EN || t.title) + ` ($${t.price})`}
+                            <option key={t.id} value={t.id} className="text-slate-900">
+                              {(language === "RU" ? t.title?.RU || t.title : t.title?.EN || t.title)}
                             </option>
                           ))}
                         </select>
@@ -240,18 +240,18 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
 
                     {/* Available Dates */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                      <label className="block text-xs font-bold text-slate-600 mb-2 uppercase tracking-wider">
                         {language === "RU" ? "Доступные даты" : "Available Dates"}
                       </label>
-                      <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-800 px-4 py-3 rounded-2xl">
+                      <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200 px-4 py-3 rounded-2xl">
                         <Calendar className="w-5 h-5 text-turquoise shrink-0" />
                         <select
                           value={selectedDate}
                           onChange={(e) => setSelectedDate(e.target.value)}
-                          className="bg-transparent border-none text-white text-xs font-semibold w-full focus:outline-none [color-scheme:dark] cursor-pointer"
+                          className="bg-transparent border-none text-slate-800 text-xs font-semibold w-full focus:outline-none cursor-pointer"
                         >
                           {selectedTour?.dates?.map((d: string) => (
-                            <option key={d} value={d}>
+                            <option key={d} value={d} className="text-slate-900">
                               {d}
                             </option>
                           ))}
@@ -261,18 +261,18 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
 
                     {/* Guests Count */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                      <label className="block text-xs font-bold text-slate-600 mb-2 uppercase tracking-wider">
                         {language === "RU" ? "Количество гостей" : "Number of Guests"}
                       </label>
-                      <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-800 px-4 py-3 rounded-2xl">
+                      <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200 px-4 py-3 rounded-2xl">
                         <Users className="w-5 h-5 text-turquoise shrink-0" />
                         <select
                           value={travelers}
                           onChange={(e) => setTravelers(Number(e.target.value))}
-                          className="bg-transparent border-none text-white text-xs font-semibold w-full focus:outline-none [color-scheme:dark] cursor-pointer"
+                          className="bg-transparent border-none text-slate-800 text-xs font-semibold w-full focus:outline-none cursor-pointer"
                         >
                           {[1, 2, 3, 4, 5, 6, 8, 10, 12, 15].map((num) => (
-                            <option key={num} value={num}>
+                            <option key={num} value={num} className="text-slate-900">
                               {num} {num === 1 ? (language === "RU" ? "гость" : "guest") : (language === "RU" ? "гостей" : "guests")}
                             </option>
                           ))}
@@ -282,10 +282,10 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
 
                     {/* Customer Name */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                      <label className="block text-xs font-bold text-slate-600 mb-2 uppercase tracking-wider">
                         {language === "RU" ? "Ваше Имя" : "Your Name"}
                       </label>
-                      <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-800 px-4 py-3 rounded-2xl">
+                      <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200 px-4 py-3 rounded-2xl">
                         <User className="w-5 h-5 text-turquoise shrink-0" />
                         <input
                           type="text"
@@ -293,17 +293,17 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
                           value={customerName}
                           onChange={(e) => setCustomerName(e.target.value)}
                           placeholder={language === "RU" ? "Иван Иванов" : "John Doe"}
-                          className="bg-transparent border-none text-white text-xs font-semibold w-full focus:outline-none placeholder-slate-500"
+                          className="bg-transparent border-none text-slate-800 text-xs font-semibold w-full focus:outline-none placeholder-slate-400"
                         />
                       </div>
                     </div>
 
                     {/* Customer Phone */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                      <label className="block text-xs font-bold text-slate-600 mb-2 uppercase tracking-wider">
                         {language === "RU" ? "Номер телефона" : "Phone Number"}
                       </label>
-                      <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-800 px-4 py-3 rounded-2xl">
+                      <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200 px-4 py-3 rounded-2xl">
                         <Phone className="w-5 h-5 text-turquoise shrink-0" />
                         <input
                           type="tel"
@@ -311,17 +311,17 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
                           value={customerPhone}
                           onChange={(e) => setCustomerPhone(e.target.value)}
                           placeholder="+996 555 123456"
-                          className="bg-transparent border-none text-white text-xs font-semibold w-full focus:outline-none placeholder-slate-500"
+                          className="bg-transparent border-none text-slate-800 text-xs font-semibold w-full focus:outline-none placeholder-slate-400"
                         />
                       </div>
                     </div>
 
                     {/* Customer Email */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                      <label className="block text-xs font-bold text-slate-600 mb-2 uppercase tracking-wider">
                         {language === "RU" ? "Email адрес" : "Email Address"}
                       </label>
-                      <div className="flex items-center gap-2.5 bg-slate-950/60 border border-slate-800 px-4 py-3 rounded-2xl">
+                      <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-200 px-4 py-3 rounded-2xl">
                         <Mail className="w-5 h-5 text-turquoise shrink-0" />
                         <input
                           type="email"
@@ -329,7 +329,7 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
                           value={customerEmail}
                           onChange={(e) => setCustomerEmail(e.target.value)}
                           placeholder="client@example.com"
-                          className="bg-transparent border-none text-white text-xs font-semibold w-full focus:outline-none placeholder-slate-500"
+                          className="bg-transparent border-none text-slate-800 text-xs font-semibold w-full focus:outline-none placeholder-slate-400"
                         />
                       </div>
                     </div>
@@ -337,7 +337,7 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
 
                   {/* Special Requests */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">
+                    <label className="block text-xs font-bold text-slate-600 mb-2 uppercase tracking-wider">
                       {language === "RU" ? "Особые пожелания (вегетарианство, аренда лошадей и др.)" : "Special Requests (dietary, horse rental, etc.)"}
                     </label>
                     <textarea
@@ -345,24 +345,26 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
                       value={specialRequests}
                       onChange={(e) => setSpecialRequests(e.target.value)}
                       placeholder={language === "RU" ? "Например: Нужен вегетарианский рацион, аренда дополнительного снаряжения..." : "E.g. Vegetarian meal plan requested, extra mountain riding gear..."}
-                      className="w-full bg-slate-950/60 border border-slate-800 p-4 rounded-2xl text-xs font-semibold text-white focus:outline-none focus:border-turquoise placeholder-slate-500 resize-none"
+                      className="w-full bg-slate-50 border border-slate-200 p-4 rounded-2xl text-xs font-semibold text-slate-800 focus:outline-none focus:border-turquoise placeholder-slate-400 resize-none"
                     />
                   </div>
 
                   {errorMsg && (
-                    <div className="p-4 bg-red-500/10 border border-red-500/25 rounded-2xl text-xs text-red-400 font-bold">
+                    <div className="p-4 bg-red-500/10 border border-red-500/25 rounded-2xl text-xs text-red-600 font-bold">
                       {errorMsg}
                     </div>
                   )}
 
                   {/* Pricing footer & submission */}
-                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-800 pt-6">
-                    <div className="text-center sm:text-left">
-                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                        {language === "RU" ? "Итоговая стоимость" : "Total Price"}
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 pt-6">
+                    <div className="text-center sm:text-left max-w-sm">
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                        {language === "RU" ? "Премиум Стандарт" : "Premium Standard"}
                       </p>
-                      <p className="text-3xl font-black text-transparent bg-gradient-to-r from-turquoise to-emerald-400 bg-clip-text">
-                        ${((selectedTour?.price || 0) * travelers).toLocaleString()}
+                      <p className="text-xs text-slate-500 font-medium leading-normal mt-1">
+                        {language === "RU"
+                          ? "Индивидуальное сопровождение, сертифицированные гиды и надежный автотранспорт на протяжении всего пути."
+                          : "Dedicated private coordinators, certified expert guides, and premium support throughout your journey."}
                       </p>
                     </div>
 
@@ -392,53 +394,53 @@ export default function HeroSection({ onSearch, onExploreClick, language, tours 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-2xl border border-emerald-500/30 p-8 rounded-3xl shadow-2xl text-center relative overflow-hidden"
+                className="bg-white border border-slate-200 p-8 rounded-3xl shadow-2xl text-center relative overflow-hidden text-slate-900"
               >
                 {/* Visual success accents */}
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-emerald-500/10 rounded-full filter blur-2xl pointer-events-none" />
                 <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-turquoise/10 rounded-full filter blur-2xl pointer-events-none" />
 
-                <div className="w-16 h-16 bg-emerald-500/20 border border-emerald-500/40 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-400" />
+                <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="w-10 h-10 text-emerald-500" />
                 </div>
 
-                <h3 className="text-2xl font-black text-white tracking-tight mb-2">
+                <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight mb-2">
                   {language === "RU" ? "Бронь Успешно Создана!" : "Reservation Created Successfully!"}
                 </h3>
-                <p className="text-sm text-slate-300 max-w-md mx-auto mb-6">
+                <p className="text-sm text-slate-600 max-w-md mx-auto mb-6">
                   {language === "RU" 
-                    ? "Благодарим за доверие! Наш NaturO координатор свяжется с вами по указанному телефону в течение часа."
-                    : "Thank you for choosing NaturO! Our coordinator will contact you by phone or email within an hour to confirm."}
+                    ? "Благодарим за доверие! Наш Nomad Travel координатор свяжется с вами по указанному телефону в течение часа."
+                    : "Thank you for choosing Nomad Travel! Our coordinator will contact you by phone or email within an hour to confirm."}
                 </p>
 
-                <div className="max-w-md mx-auto bg-slate-950/80 border border-slate-800 rounded-2xl p-5 mb-8 text-left space-y-3">
+                <div className="max-w-md mx-auto bg-slate-50 border border-slate-200 rounded-2xl p-5 mb-8 text-left space-y-3">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider">{language === "RU" ? "ID Бронирования:" : "Booking Reference:"}</span>
+                    <span className="text-slate-500 font-bold uppercase tracking-wider">{language === "RU" ? "ID Бронирования:" : "Booking Reference:"}</span>
                     <span className="font-mono text-turquoise font-extrabold">{bookingSuccess.id}</span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider">{language === "RU" ? "Тур:" : "Tour:"}</span>
-                    <span className="text-white font-bold text-right max-w-[240px] truncate">
+                    <span className="text-slate-500 font-bold uppercase tracking-wider">{language === "RU" ? "Тур:" : "Tour:"}</span>
+                    <span className="text-slate-800 font-bold text-right max-w-[240px] truncate">
                       {language === "RU" ? bookingSuccess.tourTitle?.RU || bookingSuccess.tourTitle : bookingSuccess.tourTitle?.EN || bookingSuccess.tourTitle}
                     </span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider">{language === "RU" ? "Дата:" : "Date:"}</span>
-                    <span className="text-white font-semibold">{bookingSuccess.date}</span>
+                    <span className="text-slate-500 font-bold uppercase tracking-wider">{language === "RU" ? "Дата:" : "Date:"}</span>
+                    <span className="text-slate-800 font-semibold">{bookingSuccess.date}</span>
                   </div>
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider">{language === "RU" ? "Количество гостей:" : "Travelers:"}</span>
-                    <span className="text-white font-semibold">{bookingSuccess.travelers}</span>
+                    <span className="text-slate-500 font-bold uppercase tracking-wider">{language === "RU" ? "Количество гостей:" : "Travelers:"}</span>
+                    <span className="text-slate-800 font-semibold">{bookingSuccess.travelers}</span>
                   </div>
-                  <div className="border-t border-slate-800 pt-3 flex justify-between items-center">
-                    <span className="text-slate-400 text-xs font-bold uppercase tracking-wider">{language === "RU" ? "Всего к оплате:" : "Total Price:"}</span>
-                    <span className="text-lg font-black text-emerald-400">${bookingSuccess.totalPrice}</span>
+                  <div className="border-t border-slate-200 pt-3 flex justify-between items-center">
+                    <span className="text-slate-500 text-xs font-bold uppercase tracking-wider">{language === "RU" ? "Тип поддержки:" : "Eco Partnership:"}</span>
+                    <span className="text-xs font-extrabold text-emerald-600">{language === "RU" ? "Прямая помощь семьям" : "Direct Family Support"}</span>
                   </div>
                 </div>
 
                 <button
                   onClick={() => setBookingSuccess(null)}
-                  className="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer"
+                  className="px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs uppercase tracking-widest rounded-xl transition-all cursor-pointer"
                 >
                   {language === "RU" ? "Забронировать еще" : "Book another trip"}
                 </button>

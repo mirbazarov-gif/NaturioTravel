@@ -10,8 +10,8 @@ interface FooterProps {
 
 const FOOTER_TRANSLATIONS = {
   EN: {
-    desc: "NaturO delivers premier, low-footprint, bespoke outdoor expeditions. We pair uncompromising custom luxury comfort with deep environmental integrity.",
-    subJournal: "Subscribe to the NaturO Journal",
+    desc: "Nomad Travel delivers premier, low-footprint, bespoke outdoor expeditions. We pair uncompromising custom luxury comfort with deep environmental integrity.",
+    subJournal: "Subscribe to the Nomad Travel Journal",
     subDesc: "Receive seasonal expedition dispatches, secret destination maps, and priority early-slot updates.",
     subscribedMsg: "Thank you! Your dispatch access is secured.",
     emailPlaceholder: "e.g. HenrySterling@gmail.com",
@@ -30,13 +30,13 @@ const FOOTER_TRANSLATIONS = {
     awardDesc: "World Luxury Design Excellence",
     earthAlliance: "Earth Alliance Member",
     carbonNeutral: "100% Carbon-Neutral certified",
-    rightsReserved: "© 2026 NaturO Luxury Expeditions Ltd. All privileges reserved.",
+    rightsReserved: "© 2026 Nomad Travel Luxury Expeditions Ltd. All privileges reserved.",
     madeWith: "Made with",
     by: "by AI Studio Build"
   },
   RU: {
-    desc: "NaturO предлагает первоклассные экологичные индивидуальные экспедиции в Кочкоре и на озере Сон-Куль. Мы сочетаем комфорт с глубокой заботой об окружающей среде.",
-    subJournal: "Подписаться на вестник NaturO",
+    desc: "Nomad Travel предлагает первоклассные экологичные индивидуальные экспедиции в Кочкоре и на озере Сон-Куль. Мы сочетаем комфорт с глубокой заботой об окружающей среде.",
+    subJournal: "Подписаться на вестник Nomad Travel",
     subDesc: "Получайте сезонные отчеты об экспедициях, секретные карты маршрутов и приоритетные обновления мест.",
     subscribedMsg: "Спасибо! Ваш доступ успешно зарегистрирован.",
     emailPlaceholder: "напр. ivan@gmail.com",
@@ -55,7 +55,7 @@ const FOOTER_TRANSLATIONS = {
     awardDesc: "Мировое совершенство роскошного дизайна",
     earthAlliance: "Член Альянса Земли",
     carbonNeutral: "Сертифицировано 100% углеродно-нейтрально",
-    rightsReserved: "© 2026 NaturO Luxury Expeditions Ltd. Все права защищены.",
+    rightsReserved: "© 2026 Nomad Travel Luxury Expeditions Ltd. Все права защищены.",
     madeWith: "Сделано с",
     by: "в AI Studio Build"
   }

@@ -10,7 +10,17 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ limit: "10mb", extended: true }));
+
+// Ensure uploads folder exists
+const UPLOADS_DIR = path.join(process.cwd(), "uploads");
+if (!fs.existsSync(UPLOADS_DIR)) {
+  fs.mkdirSync(UPLOADS_DIR, { recursive: true });
+}
+
+// Serve uploaded files statically before other routes
+app.use("/uploads", express.static(UPLOADS_DIR));
 
 // Initialize Gemini Client
 const ai = new GoogleGenAI({
@@ -60,13 +70,13 @@ const INITIAL_TOURS = [
       EN: [
         "Horseback trek through pristine jailoo",
         "Stay in a cozy lakeside yurt camp",
-        "Traditional Kyrgyz food by NaturO hosts",
+        "Traditional Kyrgyz food by Nomad Travel hosts",
         "Hike around the turquoise inner lake"
       ],
       RU: [
         "Конный переход по девственным джайлоо",
         "Размещение в уютном юрточном лагере",
-        "Традиционная кухня от хозяев NaturO",
+        "Традиционная кухня от хозяев Nomad Travel",
         "Прогулка у бирюзового горного озера"
       ]
     },
@@ -145,7 +155,7 @@ const INITIAL_TOURS = [
     rating: 4.85,
     reviews: 82,
     description: {
-      EN: "Trek on foot over the spectacular Jalgyz-Karagay mountain pass into the endless pasture valleys of Song-Kul. Experience NaturO community lodging with local shepherds.",
+      EN: "Trek on foot over the spectacular Jalgyz-Karagay mountain pass into the endless pasture valleys of Song-Kul. Experience Nomad Travel community lodging with local shepherds.",
       RU: "Пеший поход через живописный горный перевал Жалгыз-Карагай в бескрайние пастбища озера Сон-Куль. Размещение в гостеприимных домах местных пастухов."
     },
     dates: ["Aug 01 - Aug 04", "Aug 15 - Aug 18", "Sep 10 - Sep 13"],
@@ -161,7 +171,7 @@ const INITIAL_TOURS = [
         "Переход через перевал на высоте 3300 м",
         "Перевозка багажа на вьючных лошадях",
         "Органические кыргызские фермерские блюда",
-        "Поддержка экологического туризма NaturO"
+        "Поддержка экологического туризма Nomad Travel"
       ]
     },
     weatherLocation: "Kyzart",
@@ -399,8 +409,8 @@ const INITIAL_TESTIMONIALS = [
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200",
     rating: 5,
     text: {
-      EN: "My horse trek to Kol-Ukok lake organized by NaturO was the highlight of my research. True nomad hospitality, preserved customs, and stunning landscapes.",
-      RU: "Мой конный поход на Коль-Укок, организованный NaturO, стал главным событием поездки. Настоящее гостеприимство, бережно хранимые обычаи и сказочные пейзажи."
+      EN: "My horse trek to Kol-Ukok lake organized by Nomad Travel was the highlight of my research. True nomad hospitality, preserved customs, and stunning landscapes.",
+      RU: "Мой конный поход на Коль-Укок, организованный Nomad Travel, стал главным событием поездки. Настоящее гостеприимство, бережно хранимые обычаи и сказочные пейзажи."
     },
     location: { EN: "Moscow, Russia", RU: "Москва, Россия" }
   },
@@ -419,12 +429,12 @@ const INITIAL_TESTIMONIALS = [
   {
     id: "test-3",
     name: "Aisuluu Mamytova",
-    role: { EN: "NaturO Kochkor Advocate", RU: "Активист NaturO Кочкор" },
+    role: { EN: "Bespoke Expedition Client", RU: "Клиент индивидуальных туров" },
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200",
     rating: 5,
     text: {
-      EN: "NaturO empowers local families, shepherds, and artisans. The felt making workshop in Kochkor directly supports our craft preservation. A perfect eco-partnership.",
-      RU: "NaturO помогает местным чабанам и ремесленникам. Мастер-класс по войлоку в Кочкоре напрямую поддерживает наше наследие. Идеальное эко-партнерство."
+      EN: "Nomad Travel organized a flawless high-altitude expedition for our family. The private yurt setups, professional mountain guides, and seamless coordination made it an extraordinary journey.",
+      RU: "Nomad Travel организовали безупречную высокогорную экспедицию для нашей семьи. Приватные юрты премиум-класса, профессиональные горные гиды и идеальная логистика сделали путешествие незабываемым."
     },
     location: { EN: "Bishkek, Kyrgyzstan", RU: "Бишкек, Кыргызстан" }
   }
@@ -459,8 +469,8 @@ const INITIAL_BLOGS = [
     category: { EN: "Survival & Tips", RU: "Советы туристам" },
     author: "Nurbek Usubaliev",
     excerpt: {
-      EN: "A professional NaturO guide shares packing lists, safety tips, and horse-riding etiquette for navigating high altitude passes and staying in shepherd yurt camps.",
-      RU: "Профессиональный гид NaturO делится списком вещей, правилами безопасности и этикетом езды на лошадях для прохождения перевалов и ночевок в юрточном лагере."
+      EN: "A professional Nomad Travel guide shares packing lists, safety tips, and horse-riding etiquette for navigating high altitude passes and staying in shepherd yurt camps.",
+      RU: "Профессиональный гид Nomad Travel делится списком вещей, правилами безопасности и этикетом езды на лошадях для прохождения перевалов и ночевок в юрточном лагере."
     }
   },
   {
@@ -521,6 +531,37 @@ function writeDB(data: any) {
 }
 
 // API Routes to Fetch and Administer Content
+
+// Upload file to local server
+app.post("/api/upload", (req, res) => {
+  try {
+    const { image } = req.body;
+    if (!image) {
+      return res.status(400).json({ error: "No image data provided" });
+    }
+
+    // Match base64 prefix
+    const matches = image.match(/^data:image\/([a-zA-Z0-9+]+);base64,(.+)$/);
+    if (!matches || matches.length !== 3) {
+      return res.status(400).json({ error: "Invalid base64 image data format" });
+    }
+
+    const extension = matches[1] === "jpeg" ? "jpg" : matches[1];
+    const base64Data = matches[2];
+    const buffer = Buffer.from(base64Data, "base64");
+    
+    const fileName = `upload-${Date.now()}-${Math.random().toString(36).substring(2, 7)}.${extension}`;
+    const filePath = path.join(process.cwd(), "uploads", fileName);
+    
+    fs.writeFileSync(filePath, buffer);
+    
+    const fileUrl = `/uploads/${fileName}`;
+    res.json({ url: fileUrl });
+  } catch (error: any) {
+    console.error("Upload error:", error);
+    res.status(500).json({ error: error.message || "Failed to upload image" });
+  }
+});
 
 // Get all content
 app.get("/api/content", (req, res) => {
@@ -607,7 +648,7 @@ app.post("/api/chat", async (req, res) => {
 
     if (!process.env.GEMINI_API_KEY) {
       return res.status(200).json({ 
-        text: "Hi there! I am NaturO's AI Travel Concierge. Please note that the GEMINI_API_KEY environment variable is not configured yet. Once configured, I will be fully functional to plan your dream vacation. For now, feel free to explore our pre-planned premium tours!" 
+        text: "Hi there! I am Nomad Travel's AI Assistant. Please note that the GEMINI_API_KEY environment variable is not configured yet. Once configured, I will be fully functional to plan your dream vacation. For now, feel free to explore our pre-planned premium tours!" 
       });
     }
 
@@ -620,7 +661,7 @@ app.post("/api/chat", async (req, res) => {
     const chat = ai.chats.create({
       model: "gemini-3.5-flash",
       config: {
-        systemInstruction: "You are NaturO's Elite AI Travel Concierge. NaturO is an award-winning premium travel agency specializing in ultra-luxury, immersive adventures, scenic nature excursions, and curated experiential journeys. Assist users with custom itineraries, tour recommendations, budgeting tips, and travel guidance. Keep your tone inspiring, professional, highly helpful, and conversational. Keep answers beautifully structured with clear markdown bullet points and paragraphs.",
+        systemInstruction: "You are Nomad Travel's AI Assistant. Nomad Travel is an award-winning premium travel agency specializing in immersive adventures, scenic nature excursions, and curated experiential journeys. Assist users with custom itineraries, tour recommendations, budgeting tips, and travel guidance. Keep your tone inspiring, professional, highly helpful, and conversational. Keep answers beautifully structured with clear markdown bullet points and paragraphs.",
       },
       history: formattedHistory
     });
@@ -661,7 +702,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`[NaturO] Server running on http://0.0.0.0:${PORT}`);
+    console.log(`[Nomad Travel] Server running on http://0.0.0.0:${PORT}`);
   });
 }
 

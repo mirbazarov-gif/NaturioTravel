@@ -426,8 +426,8 @@
       "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200",
       "rating": 5,
       "text": {
-        "EN": "My horse trek to Kol-Ukok lake organized by NaturO was the highlight of my research. True nomad hospitality, preserved customs, and stunning landscapes.",
-        "RU": "Мой конный поход на Коль-Укок, организованный NaturO, стал главным событием поездки. Настоящее гостеприимство, бережно хранимые обычаи и сказочные пейзажи."
+        "EN": "My horse trek to Kol-Ukok lake organized by Nomad Travel was the highlight of my research. True nomad hospitality, preserved customs, and stunning landscapes.",
+        "RU": "Мой конный поход на Коль-Укок, организованный Nomad Travel, стал главным событием поездки. Настоящее гостеприимство, бережно хранимые обычаи и сказочные пейзажи."
       },
       "location": { "EN": "Moscow, Russia", "RU": "Москва, Россия" }
     },
@@ -446,12 +446,12 @@
     {
       "id": "test-3",
       "name": "Aisuluu Mamytova",
-      "role": { "EN": "NaturO Kochkor Advocate", "RU": "Активист NaturO Кочкор" },
+      "role": { "EN": "Bespoke Expedition Client", "RU": "Клиент индивидуальных туров" },
       "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200",
       "rating": 5,
       "text": {
-        "EN": "NaturO empowers local families, shepherds, and artisans. The felt making workshop in Kochkor directly supports our craft preservation. A perfect eco-partnership.",
-        "RU": "NaturO помогает местным чабанам и ремесленникам. Мастер-класс по войлоку в Кочкоре напрямую поддерживает наше наследие. Идеальное эко-партнерство."
+        "EN": "Nomad Travel organized a flawless high-altitude expedition for our family. The private yurt setups, professional mountain guides, and seamless coordination made it an extraordinary journey.",
+        "RU": "Nomad Travel организовали безупречную высокогорную экспедицию для нашей семьи. Приватные юрты премиум-класса, профессиональные горные гиды и идеальная логистика сделали путешествие незабываемым."
       },
       "location": { "EN": "Bishkek, Kyrgyzstan", "RU": "Бишкек, Кыргызстан" }
     }
@@ -485,8 +485,8 @@
       "category": { "EN": "Survival & Tips", "RU": "Советы туристам" },
       "author": "Nurbek Usubaliev",
       "excerpt": {
-        "EN": "A professional NaturO guide shares packing lists, safety tips, and horse-riding etiquette for navigating high altitude passes and staying in shepherd yurt camps.",
-        "RU": "Профессиональный гид NaturO делится списком вещей, правилами безопасности и этикетом езды на лошадях для прохождения перевалов и ночевок в юртах."
+        "EN": "A professional Nomad Travel guide shares packing lists, safety tips, and horse-riding etiquette for navigating high altitude passes and staying in shepherd yurt camps.",
+        "RU": "Профессиональный гид Nomad Travel делится списком вещей, правилами безопасности и этикетом езды на лошадях для прохождения перевалов и ночевок в юртах."
       }
     },
     {

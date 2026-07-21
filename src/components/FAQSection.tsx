@@ -10,7 +10,7 @@ interface FAQItem {
 
 const FAQ_ITEMS_EN: FAQItem[] = [
   {
-    question: "What makes NaturO expeditions 'carbon-neutral'?",
+    question: "What makes Nomad Travel expeditions 'carbon-neutral'?",
     answer: "We offset 100% of flight emissions via gold-standard certified ecological investments. In addition, our base camps and cliffside yachts operate exclusively on modern off-grid solar generators with a strict zero-single-use-plastic mandate.",
   },
   {
@@ -29,7 +29,7 @@ const FAQ_ITEMS_EN: FAQItem[] = [
 
 const FAQ_ITEMS_RU: FAQItem[] = [
   {
-    question: "Что делает экспедиции NaturO экологически нейтральными?",
+    question: "Что делает экспедиции Nomad Travel экологически нейтральными?",
     answer: "Мы компенсируем 100% выбросов от перелетов с помощью золотых экологических сертификатов. Наряду с этим, наши юрточные лагеря работают исключительно на автономных солнечных генераторах с полным отказом от одноразового пластика.",
   },
   {

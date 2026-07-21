@@ -336,8 +336,10 @@ export default function TourDetailsModal({
 
                       {/* Summary box */}
                       <div className="bg-slate-50 dark:bg-slate-950 p-4 rounded-xl border border-slate-200/60 dark:border-slate-800/60 mt-2 flex items-center justify-between text-xs">
-                        <span className="font-bold uppercase text-[10px] text-slate-400">Total Booking Sum:</span>
-                        <strong className="text-md font-extrabold text-turquoise">
+                        <span className="font-bold uppercase text-[10px] text-slate-400">
+                          {language === "RU" ? "Итоговая стоимость:" : "Total price:"}
+                        </span>
+                        <strong className="text-sm font-extrabold text-turquoise">
                           {getPriceString(tour.price * guests)}
                         </strong>
                       </div>
@@ -349,13 +351,13 @@ export default function TourDetailsModal({
                           onClick={() => setBookingStep("details")}
                           className="flex-1 py-3 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold uppercase rounded-xl hover:bg-slate-200 transition-all"
                         >
-                          Back
+                          {language === "RU" ? "Назад" : "Back"}
                         </button>
                         <button
                           type="submit"
                           className="flex-1 py-3 bg-gradient-to-r from-deep-ocean to-turquoise text-white text-xs font-bold uppercase rounded-xl shadow-md hover:from-turquoise hover:to-deep-ocean transition-all"
                         >
-                          Proceed to Secure Escrow
+                          {language === "RU" ? "Перейти к бронированию" : "Proceed to Secure Escrow"}
                         </button>
                       </div>
                     </form>
@@ -383,7 +385,7 @@ export default function TourDetailsModal({
                       <div className="flex justify-between items-start mb-6">
                         <CreditCard className="w-8 h-8 text-white/80" />
                         <span className="text-[10px] font-bold uppercase tracking-widest bg-white/10 px-2 py-0.5 rounded border border-white/10">
-                          NaturO Gold Card
+                          Nomad Travel Gold Card
                         </span>
                       </div>
 
@@ -479,12 +481,12 @@ export default function TourDetailsModal({
                           {isPaying ? (
                             <>
                               <Activity className="w-4 h-4 animate-spin" />
-                              <span>Processing Escrow...</span>
+                              <span>{language === "RU" ? "Обработка..." : "Processing Escrow..."}</span>
                             </>
                           ) : (
                             <>
                               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-                              <span>Secure Pay {getPriceString(totalPrice)}</span>
+                              <span>{language === "RU" ? "Подтвердить Бронь" : "Secure Complete Reservation"}</span>
                             </>
                           )}
                         </button>
@@ -524,8 +526,12 @@ export default function TourDetailsModal({
                         <span className="text-slate-950 dark:text-white font-bold">{guests} Explorer</span>
                       </div>
                       <div className="flex justify-between py-1.5 pt-3">
-                        <span className="text-turquoise uppercase text-[9px] font-bold">Total Paid (Secure):</span>
-                        <strong className="text-emerald-500 font-extrabold">{getPriceString(totalPrice)}</strong>
+                        <span className="text-turquoise uppercase text-[9px] font-bold">
+                          {language === "RU" ? "Итого к оплате:" : "Total Price:"}
+                        </span>
+                        <strong className="text-emerald-500 font-extrabold">
+                          {getPriceString(totalPrice)}
+                        </strong>
                       </div>
                     </div>
 

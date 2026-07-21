@@ -26,7 +26,7 @@ export default function BlogSection({ blogPosts, language }: BlogSectionProps) {
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-              {language === "RU" ? "Журнал NaturO" : "The NaturO Journal"}
+              {language === "RU" ? "Журнал Nomad Travel" : "The Nomad Travel Journal"}
             </h2>
             <p className="text-slate-500 dark:text-slate-400 mt-4 max-w-lg font-medium">
               {t.blogSubtitle}

@@ -7,6 +7,16 @@ interface TianShanBackgroundProps {
 export default function TianShanBackground({ isDark }: TianShanBackgroundProps) {
   return (
     <div className="absolute inset-x-0 pointer-events-none overflow-hidden select-none z-0">
+      {/* Real photographic majestic background of Kyrgyz Tian-Shan mountains */}
+      <div className="fixed inset-0 pointer-events-none select-none z-0 opacity-[0.08] dark:opacity-[0.05] transition-opacity duration-300">
+        <img 
+          src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=1920" 
+          alt="Kyrgyz Tian-Shan Mountains Background" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+
       {/* Absolute floating mountain drawings placed strategically on the pages */}
       
       {/* SECTION 1: Left floating peak decoration (behind Destinations/Tours) */}

@@ -12,106 +12,95 @@ export default function Logo({ className = "w-8 h-8", isDark = true }: LogoProps
       className={className}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      id="custom-logo-svg"
+      id="custom-luxury-logo"
     >
-      {/* Outer compass-like fine ring */}
+      {/* Outer elegant golden thin ring */}
       <circle
         cx="50"
         cy="50"
-        r="44"
-        stroke="url(#compassGrad)"
-        strokeWidth="1.2"
-        strokeDasharray="4 4"
-        className="opacity-70"
-      />
-      
-      {/* Golden Rising Sun */}
-      <circle cx="50" cy="38" r="10" fill="url(#sunGrad)" />
-
-      {/* Sun rays (subtle aesthetic ticks) */}
-      <line x1="50" y1="23" x2="50" y2="26" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="65" y1="38" x2="62" y2="38" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="35" y1="38" x2="38" y2="38" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="60.6" y1="27.4" x2="58.5" y2="29.5" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
-      <line x1="39.4" y1="27.4" x2="41.5" y2="29.5" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* Majestic Mountain Ridge (Tian Shan) in background */}
-      <path
-        d="M10 75 L38 35 L52 53 L76 25 L90 75 Z"
-        fill="url(#mountainGrad)"
-        stroke={isDark ? "#1E293B" : "#F1F5F9"}
-        strokeWidth="1"
+        r="46"
+        stroke="url(#luxuryGoldGrad)"
+        strokeWidth="1.5"
+        className="opacity-90"
       />
 
-      {/* Snow caps */}
-      <path
-        d="M38 35 L33 42 L42 42 L38 35 Z"
-        fill="#FFFFFF"
-        opacity="0.95"
-      />
-      <path
-        d="M76 25 L68 38 L81 36 L76 25 Z"
-        fill="#FFFFFF"
-        opacity="0.95"
+      {/* Outer compass dashes */}
+      <line x1="50" y1="4" x2="50" y2="7" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="50" y1="93" x2="50" y2="96" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="4" y1="50" x2="7" y2="50" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="93" y1="50" x2="96" y2="50" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" strokeLinecap="round" />
+
+      {/* Stellar North Star */}
+      <polygon
+        points="50,14 52,21 59,23 52,25 50,32 48,25 41,23 48,21"
+        fill="url(#luxuryGoldGrad)"
       />
 
-      {/* Foreground Mountain details */}
-      <path
-        d="M25 75 L45 48 L60 75 Z"
-        fill="url(#foregroundMountainGrad)"
-        opacity="0.85"
-      />
-
-      {/* Nomadic Yurt (Kыргызская боз-үй) at the center foreground */}
-      <g transform="translate(42, 60)">
-        {/* Yurt Dome */}
-        <path
-          d="M2 15 C2 3, 14 3, 14 15 Z"
-          fill="#F8FAFC"
-          stroke="#1E293B"
-          strokeWidth="1.5"
-        />
-        {/* Yurt Walls */}
-        <rect
-          x="2"
-          y="15"
-          width="12"
-          height="6"
-          rx="1"
-          fill="#F1F5F9"
-          stroke="#1E293B"
-          strokeWidth="1.5"
-        />
-        {/* Yurt Door (glowing warm gold inside) */}
-        <path
-          d="M6 21 L6 15 C6 14, 10 14, 10 15 L10 21 Z"
-          fill="#FBBF24"
-          stroke="#1E293B"
-          strokeWidth="1.2"
-        />
-        {/* Shanyrak (Tunduk) crisscross crown lines */}
-        <circle cx="8" cy="4" r="2.5" fill="#FBBF24" stroke="#1E293B" strokeWidth="1" />
-        <line x1="8" y1="1.5" x2="8" y2="6.5" stroke="#1E293B" strokeWidth="0.8" />
-        <line x1="5.5" y1="4" x2="10.5" y2="4" stroke="#1E293B" strokeWidth="0.8" />
+      {/* The Sacred Kyrgyz Shanyrak / Tunduk (Nomadic Sun Crown) */}
+      <g transform="translate(50, 42)">
+        {/* Shanyrak Ring */}
+        <circle cx="0" cy="0" r="14" stroke="url(#luxuryGoldGrad)" strokeWidth="2" fill="none" />
+        
+        {/* Criss-cross bent dome struts representing the traditional crown */}
+        <path d="M-13,5 C-5,-5 5,-5 13,5" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" fill="none" />
+        <path d="M-13,-5 C-5,5 5,5 13,-5" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" fill="none" />
+        <path d="M-5,-13 C-5,-5 -5,5 -5,13" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" fill="none" />
+        <path d="M5,-13 C5,-5 5,5 5,13" stroke="url(#luxuryGoldGrad)" strokeWidth="1.5" fill="none" />
       </g>
 
-      {/* Gradients */}
+      {/* Minimalist Peak 1: Back Ridge (Deep Turquoise) */}
+      <path
+        d="M16 82 L42 46 L62 72 L84 82 Z"
+        fill="url(#mountainBackGrad)"
+        stroke={isDark ? "#020617" : "#FFFFFF"}
+        strokeWidth="1.2"
+        strokeLinejoin="round"
+      />
+
+      {/* Minimalist Peak 2: Front Ridge (Bright Turquoise/Emerald) */}
+      <path
+        d="M28 82 L58 38 L80 82 Z"
+        fill="url(#mountainFrontGrad)"
+        stroke={isDark ? "#020617" : "#FFFFFF"}
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+
+      {/* Snowcaps on Peaks */}
+      <polygon
+        points="58,38 52,48 56,47 58,51 61,46 64,48"
+        fill="#FFFFFF"
+        opacity="0.95"
+      />
+      <polygon
+        points="42,46 38,52 41,51 43,54 45,51"
+        fill="#FFFFFF"
+        opacity="0.8"
+      />
+
+      {/* Reflective Lake ripples at base */}
+      <line x1="32" y1="86" x2="68" y2="86" stroke="url(#luxuryTealGrad)" strokeWidth="1.5" strokeLinecap="round" className="opacity-60" />
+      <line x1="42" y1="90" x2="58" y2="90" stroke="url(#luxuryGoldGrad)" strokeWidth="1.2" strokeLinecap="round" className="opacity-70" />
+
+      {/* Gradients declarations */}
       <defs>
-        <linearGradient id="sunGrad" x1="50" y1="28" x2="50" y2="48" gradientUnits="userSpaceOnUse">
+        <linearGradient id="luxuryGoldGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#FBBF24" />
-          <stop offset="100%" stopColor="#EF4444" />
+          <stop offset="35%" stopColor="#F59E0B" />
+          <stop offset="100%" stopColor="#D97706" />
         </linearGradient>
-        <linearGradient id="mountainGrad" x1="50" y1="25" x2="50" y2="75" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#0F766E" />
-          <stop offset="100%" stopColor="#0F172A" />
-        </linearGradient>
-        <linearGradient id="foregroundMountainGrad" x1="42.5" y1="48" x2="42.5" y2="75" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#0D9488" />
-          <stop offset="100%" stopColor="#0F172A" />
-        </linearGradient>
-        <linearGradient id="compassGrad" x1="50" y1="6" x2="50" y2="94" gradientUnits="userSpaceOnUse">
+        <linearGradient id="luxuryTealGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
           <stop offset="0%" stopColor="#2DD4BF" />
-          <stop offset="100%" stopColor="#F59E0B" />
+          <stop offset="100%" stopColor="#0D9488" />
+        </linearGradient>
+        <linearGradient id="mountainBackGrad" x1="42" y1="46" x2="42" y2="82" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#115E59" />
+          <stop offset="100%" stopColor="#0F172A" />
+        </linearGradient>
+        <linearGradient id="mountainFrontGrad" x1="54" y1="38" x2="54" y2="82" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#0D9488" />
+          <stop offset="50%" stopColor="#14B8A6" />
+          <stop offset="100%" stopColor="#020617" />
         </linearGradient>
       </defs>
     </svg>

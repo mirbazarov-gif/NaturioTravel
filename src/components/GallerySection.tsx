@@ -102,7 +102,7 @@ export default function GallerySection({ language }: GallerySectionProps) {
               className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 hover:text-turquoise transition-colors"
             >
               <Instagram className="w-4 h-4 text-pink-500" />
-              <span>{isRu ? "Подпишитесь @NaturOExpeditions" : "Follow @NaturOExpeditions"}</span>
+              <span>{isRu ? "Подпишитесь @Nomad TravelExpeditions" : "Follow @Nomad TravelExpeditions"}</span>
             </a>
           </div>
         </div>

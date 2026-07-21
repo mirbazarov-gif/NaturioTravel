@@ -18,15 +18,15 @@ const STATS_RU = [
 ];
 
 const TIMELINE_EN = [
-  { year: "2011", title: "Inception of NaturO", desc: "Formed by world-class mountaineers & conservation biologists to deliver premium wilderness access." },
-  { year: "2016", title: "Community Partnerships", desc: "Established direct profit-sharing with Kochkor community shepherd families for horse rentals." },
+  { year: "2011", title: "Inception of Nomad Travel", desc: "Formed by world-class mountaineers & conservation biologists to deliver premium wilderness access." },
+  { year: "2016", title: "Exclusive Camp Network", desc: "Launched customized high-comfort geodesic dome camps in remote areas of Song-Kul and Kol-Ukok." },
   { year: "2021", title: "The Zero-Footprint Pledge", desc: "First travel agency to guarantee total solar-powered lodges and 100% verified carbon offset flights." },
   { year: "2026", title: "Elite AI Concierge Launch", desc: "Pioneered interactive real-time multi-agent systems for instant hyper-custom route planning." },
 ];
 
 const TIMELINE_RU = [
-  { year: "2011", title: "Создание NaturO", desc: "Создано альпинистами и биологами мирового класса для экологичного доступа к дикой природе." },
-  { year: "2016", title: "Общинное Партнерство", desc: "Организовали прямое распределение доходов с семьями пастухов в Кочкоре за аренду лошадей и юрт." },
+  { year: "2011", title: "Создание Nomad Travel", desc: "Создано альпинистами и биологами мирового класса для экологичного доступа к дикой природе." },
+  { year: "2016", title: "Собственные Эко-Кемпинги", desc: "Открытие комфортабельных геокупольных лагерей в отдаленных ущельях Сон-Куля и Коль-Укока." },
   { year: "2021", title: "Нулевой Экологический След", desc: "Первый туроператор с юрточными лагерями на 100% солнечной энергии и полной компенсацией перелетов." },
   { year: "2026", title: "Запуск ИИ-Консьержа", desc: "Внедрили передовые интерактивные мультиагентные ИИ-системы для мгновенного планирования туров." },
 ];
@@ -53,7 +53,7 @@ export default function WhyChooseUs({ language }: WhyChooseUsProps) {
           <div className="flex items-center gap-1.5 mb-3">
             <span className="w-1.5 h-1.5 bg-turquoise rounded-full" />
             <span className="text-xs font-bold tracking-widest text-turquoise uppercase">
-              {isRu ? "ОТЛИЧИЯ NATURO" : "The NaturO Distinction"}
+              {isRu ? "ОТЛИЧИЯ NOMAD TRAVEL" : "The Nomad Travel Distinction"}
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -112,8 +112,8 @@ export default function WhyChooseUs({ language }: WhyChooseUsProps) {
             </h3>
             <p className="text-slate-500 dark:text-slate-400 text-sm font-medium leading-relaxed mb-6">
               {isRu
-                ? "NaturO начинался как социальный пакт поддержки местных чабанов. Сегодня мы являемся ведущей углеродно-нейтральной сетью эко-экспедиций в Кочкоре."
-                : "NaturO began as a simple pact to support local high-altitude shepherds. Today, we stand as the region's premier carbon-neutral community-hosted travel network."}
+                ? "Nomad Travel создает выдающиеся уединенные экспедиции по Кыргызстану. Мы предлагаем уникальный уровень приватности, комфорта и безопасности в дикой природе."
+                : "Nomad Travel designs outstanding, secluded expeditions across Kyrgyzstan. We deliver an unmatched standard of privacy, custom luxury, and safety in the wilderness."}
             </p>
 
             {/* Interactive Timeline navigation buttons */}

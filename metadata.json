@@ -1,6 +1,6 @@
 {
-  "name": "NaturO",
-  "description": "NaturO - Authentic Kyrgyzstan Community-Based Eco-Tourism (NaturO), horseback expeditions, yurt stays, and nomadic festivals with premium AI itinerary planning.",
+  "name": "Nomad Travel",
+  "description": "Nomad Travel - Authentic Kyrgyzstan Community-Based Eco-Tourism, horseback expeditions, yurt stays, and nomadic festivals with premium AI itinerary planning.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

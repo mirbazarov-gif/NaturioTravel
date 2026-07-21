@@ -90,8 +90,8 @@ const EVENTS: EventItem[] = [
       RU: "26 июля - 28 июля 2026 г."
     },
     location: {
-      EN: "Kochkor NaturO Crafts Center",
-      RU: "Ремесленный центр NaturO в Кочкоре"
+      EN: "Kochkor Nomad Travel Crafts Center",
+      RU: "Ремесленный центр Nomad Travel в Кочкоре"
     },
     image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=800",
     description: {

@@ -187,7 +187,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Philanthropist & Explorer",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200",
     rating: 5,
-    text: "The bespoke helicopter expedition in Switzerland exceeded every dream. NaturO coordinates the impossible with extraordinary discretion and flawless style.",
+    text: "The bespoke helicopter expedition in Switzerland exceeded every dream. Nomad Travel coordinates the impossible with extraordinary discretion and flawless style.",
     location: "London, UK",
   },
   {
@@ -205,7 +205,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Luxury Travel Curators",
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200",
     rating: 5,
-    text: "NaturO handles experiential tourism on a completely elevated level. Our private villa over the Amalfi Coast felt like floating inside a classic painting.",
+    text: "Nomad Travel handles experiential tourism on a completely elevated level. Our private villa over the Amalfi Coast felt like floating inside a classic painting.",
     location: "Tokyo, Japan",
   },
 ];

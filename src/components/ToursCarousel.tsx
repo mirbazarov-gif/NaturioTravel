@@ -30,7 +30,7 @@ export default function ToursCarousel({
   language,
   searchFilter
 }: ToursCarouselProps) {
-  // Switch between "carousel" (Cinematic Slider) and "directory" (NaturO Kochkor inspired directory grid)
+  // Switch between "carousel" (Cinematic Slider) and "directory" (Nomad Travel Kochkor inspired directory grid)
   const [viewMode, setViewMode] = useState<"carousel" | "directory">("directory");
   
   // Category filter (All, Luxury, Adventure, Eco-Travel, Cultural)
@@ -47,7 +47,7 @@ export default function ToursCarousel({
   const t = UI_TRANSLATIONS[language];
   const categories = ["All", "Horse Trekking", "Hiking & Trekking", "Cultural Heritage"];
 
-  // Dynamic helper functions for classifying NaturO Kochkor tours in directory mode
+  // Dynamic helper functions for classifying Nomad Travel Kochkor tours in directory mode
   const getTourType = (tourItem: Tour) => {
     const title = getTranslation(tourItem.title, "EN").toLowerCase();
     const desc = getTranslation(tourItem.description, "EN").toLowerCase();
@@ -165,7 +165,7 @@ export default function ToursCarousel({
           <div>
             <div className="flex items-center gap-2 mb-3">
               <span className="px-2.5 py-1 bg-turquoise/15 text-turquoise text-[10px] font-extrabold rounded-full uppercase tracking-widest">
-                {language === "RU" ? "ПРОГРАММЫ NaturO КЫРГЫЗСТАНА" : "COMMUNITY-BASED NaturO TOURS"}
+                {language === "RU" ? "ПРОГРАММЫ Nomad Travel КЫРГЫЗСТАНА" : "COMMUNITY-BASED Nomad Travel TOURS"}
               </span>
             </div>
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -173,8 +173,8 @@ export default function ToursCarousel({
             </h2>
             <p className="text-slate-500 dark:text-slate-400 mt-3 font-medium max-w-xl text-sm leading-relaxed">
               {language === "RU" 
-                ? "Наши туры разработаны совместно с местными жителями и ремесленниками Кочкора. 100% вашего платежа напрямую поддерживает сельские семьи Кыргызстана." 
-                : "Created in cooperation with local shepherds, grandmothers, and guides of Kochkor. Every booking supports family businesses, felt-carpet weavers, and mountain horse breeders."}
+                ? "Эксклюзивные авторские маршруты по самым живописным и уединенным уголкам Кыргызстана в сопровождении опытных гидов." 
+                : "Bespoke guided expeditions through the most scenic and pristine high-altitude landscapes of Kyrgyzstan."}
             </p>
           </div>
 
@@ -189,7 +189,7 @@ export default function ToursCarousel({
               }`}
             >
               <LayoutGrid className="w-4 h-4" />
-              <span>{language === "RU" ? "Каталог NaturO" : "NaturO Directory"}</span>
+              <span>{language === "RU" ? "Каталог Nomad Travel" : "Nomad Travel Directory"}</span>
             </button>
             <button
               onClick={() => setViewMode("carousel")}
@@ -225,7 +225,7 @@ export default function ToursCarousel({
           ))}
         </div>
 
-        {/* VIEW 1: NaturO KOCHKOR DETAILED DIRECTORY */}
+        {/* VIEW 1: Nomad Travel KOCHKOR DETAILED DIRECTORY */}
         {viewMode === "directory" && (
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             
@@ -234,7 +234,7 @@ export default function ToursCarousel({
               <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800">
                 <span className="text-xs font-extrabold uppercase tracking-widest text-slate-900 dark:text-white flex items-center gap-2">
                   <SlidersHorizontal className="w-4 h-4 text-turquoise" />
-                  {language === "RU" ? "Фильтры Туров" : "NaturO Tour Filters"}
+                  {language === "RU" ? "Фильтры Туров" : "Nomad Travel Tour Filters"}
                 </span>
                 {(activityType !== "All" || difficulty !== "All" || durationGroup !== "All") && (
                   <button 
@@ -334,16 +334,16 @@ export default function ToursCarousel({
                 </div>
               </div>
 
-              {/* Social Support Impact Info Box */}
-              <div className="bg-emerald-500/5 border border-emerald-500/20 p-4 rounded-2xl text-[11px] leading-relaxed text-slate-500 dark:text-slate-400 space-y-2">
-                <div className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-bold">
-                  <Leaf className="w-4 h-4 shrink-0" />
-                  <span>{language === "RU" ? "Эко-Локальный Продукт NaturO" : "NaturO Eco-Impact Guarantee"}</span>
+              {/* Quality & Safety Info Box */}
+              <div className="bg-turquoise/5 border border-turquoise/20 p-4 rounded-2xl text-[11px] leading-relaxed text-slate-500 dark:text-slate-400 space-y-2">
+                <div className="flex items-center gap-1.5 text-turquoise font-bold">
+                  <ShieldCheck className="w-4 h-4 shrink-0" />
+                  <span>{language === "RU" ? "Золотой стандарт сервиса" : "Premium Service Standard"}</span>
                 </div>
                 <p>
                   {language === "RU" 
-                    ? "Услуги предоставляются напрямую кыргызскими семьями чабанов. Без посредников."
-                    : "100% of local payments reach hosts directly, funding rural schools and cultural conservation."}
+                    ? "Все экспедиции Nomad Travel проходят под руководством сертифицированных гидов и включают высококлассное снаряжение и транспорт."
+                    : "All Nomad Travel expeditions are guided by certified professionals and include premium-grade outdoor gear and support."}
                 </p>
               </div>
             </div>
@@ -354,7 +354,7 @@ export default function ToursCarousel({
                 <div className="text-center py-20 bg-slate-50 dark:bg-slate-900/40 rounded-3xl border border-dashed border-slate-200 dark:border-slate-800/60">
                   <Info className="w-10 h-10 text-slate-400 mx-auto mb-3" />
                   <p className="text-slate-500 font-bold text-sm">
-                    {language === "RU" ? "Подходящие туры NaturO не найдены." : "No NaturO tours match the selected filters."}
+                    {language === "RU" ? "Подходящие туры Nomad Travel не найдены." : "No Nomad Travel tours match the selected filters."}
                   </p>
                   <button
                     onClick={() => {
@@ -421,10 +421,10 @@ export default function ToursCarousel({
                             <Heart className={`w-3.5 h-3.5 ${wishlist.includes(tour.id) ? "fill-red-500 text-red-500" : "text-white"}`} />
                           </button>
 
-                          {/* Support Local Shepherd Ribbon */}
-                          <div className="absolute bottom-3 left-3 bg-emerald-950/85 backdrop-blur-md border border-emerald-500/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5 text-white text-[9px] font-bold tracking-wider">
-                            <Leaf className="w-3 h-3 text-emerald-400 shrink-0" />
-                            <span>{language === "RU" ? "100% Местный доход (NaturO)" : "100% NaturO Community Profit"}</span>
+                          {/* Premium Expedition Ribbon */}
+                          <div className="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md border border-turquoise/30 px-2.5 py-1 rounded-lg flex items-center gap-1.5 text-white text-[9px] font-bold tracking-wider">
+                            <ShieldCheck className="w-3 h-3 text-turquoise shrink-0" />
+                            <span>{language === "RU" ? "ПРЕМИУМ ЭКСПЕДИЦИЯ" : "PREMIUM EXPEDITION"}</span>
                           </div>
                         </div>
 
@@ -467,7 +467,7 @@ export default function ToursCarousel({
                           <div className="pt-3 border-t border-slate-100 dark:border-slate-800/40 flex items-center justify-between">
                             <div>
                               <span className="text-[9px] text-slate-400 block font-bold uppercase tracking-widest">
-                                {language === "RU" ? "СТОИМОСТЬ NaturO" : "NaturO COMMUNITY PRICE"}
+                                {language === "RU" ? "СТОИМОСТЬ Nomad Travel" : "Nomad Travel COMMUNITY PRICE"}
                               </span>
                               <div className="flex items-baseline gap-1">
                                 <span className="text-sm line-through text-slate-400 text-left font-semibold">

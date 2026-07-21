@@ -24,10 +24,10 @@ export const UI_TRANSLATIONS = {
     destinations: "Destinations",
     featuredTours: "Featured Tours",
     interactiveMap: "Interactive Map",
-    whyNaturO: "Why NaturO",
+    whyNomadTravel: "Why Nomad Travel",
     testimonials: "Testimonials",
     travelBlog: "Travel Blog",
-    aiPlanner: "AI Planner",
+    aiPlanner: "AI Assistant",
     adminDashboard: "Admin Dashboard",
     bookNow: "Book Expedition",
     slotsLeft: "slots left",
@@ -48,12 +48,12 @@ export const UI_TRANSLATIONS = {
     navDestinations: "Destinations",
     navTours: "Tours",
     navEvents: "Events",
-    navWhyUs: "Why NaturO",
+    navWhyUs: "Why Nomad Travel",
     navAbout: "About & FAQ",
-    navAiAssistant: "AI Planner",
+    navAiAssistant: "AI Assistant",
 
     // Hero Section
-    awardWinning: "NaturO ECO-TOURISM OF KYRGYZSTAN",
+    awardWinning: "Nomad Travel ECO-TOURISM OF KYRGYZSTAN",
     heroTitlePart1: "Explore Kyrgyzstan in its",
     heroTitlePart2: "Nomadic Spirit",
     heroSubtitle: "Indulge in authentic community-based expeditions, horseback mountain treks, and traditional yurt stays designed around pristine landscapes of Kochkor & Song-Kul.",
@@ -88,7 +88,7 @@ export const UI_TRANSLATIONS = {
     toursDesc: "Bespoke itineraries designed for discerning travelers. Every route is staffed with master specialists, fully carbon-offset, and tailored to absolute physical comfort.",
 
     // Why Us Section
-    whyTitle: "WHY NATURO ELITE",
+    whyTitle: "WHY NOMAD TRAVEL ELITE",
     whySubtitle: "Standard of Absolute Care",
     whyDesc: "Serving a community of international explorers with high-discretion hospitality, ecological conservation custody, and flawless logistical executions.",
     stat1Title: "Exclusive Routes",
@@ -112,10 +112,10 @@ export const UI_TRANSLATIONS = {
     faqSubtitle: "Frequently Asked Questions",
 
     // Chat
-    chatTitle: "AI Travel Concierge",
+    chatTitle: "AI Assistant",
     chatSubtitle: "Elite Bespoke Itinerary Architect",
     chatPlaceholder: "Inquire about premium travel, route customizations, or weather conditions...",
-    chatIntro: "Greetings! I am NaturO's Elite AI Concierge. I can coordinate custom itineraries, check real-time weather, or adjust package durations according to your timeline.",
+    chatIntro: "Greetings! I am Nomad Travel's AI Assistant. I can coordinate custom itineraries, check real-time weather, or adjust package durations according to your timeline.",
 
     // Modal / Checkout
     bookTour: "Secure Your Passage",
@@ -133,7 +133,7 @@ export const UI_TRANSLATIONS = {
     close: "Close",
 
     // Admin Panel UI
-    adminTitle: "NaturO Content Administration Console",
+    adminTitle: "Nomad Travel Content Administration Console",
     adminSubtitle: "Manage Tours, Destinations, Blogs, and Testimonials",
     addTour: "Create New Tour",
     addDest: "Create New Destination",
@@ -159,10 +159,10 @@ export const UI_TRANSLATIONS = {
     destinations: "Направления",
     featuredTours: "Лучшие Туры",
     interactiveMap: "Интерактивная Карта",
-    whyNaturO: "Почему NaturO",
+    whyNomadTravel: "Почему Nomad Travel",
     testimonials: "Отзывы",
     travelBlog: "Блог Путешествий",
-    aiPlanner: "ИИ-Планировщик",
+    aiPlanner: "ИИ помощник",
     adminDashboard: "Панель Управления",
     bookNow: "Заказать Экспедицию",
     slotsLeft: "мест осталось",
@@ -183,15 +183,15 @@ export const UI_TRANSLATIONS = {
     navDestinations: "Направления",
     navTours: "Туры",
     navEvents: "События",
-    navWhyUs: "Почему NaturO",
+    navWhyUs: "Почему Nomad Travel",
     navAbout: "О нас и FAQ",
-    navAiAssistant: "ИИ-Планировщик",
+    navAiAssistant: "ИИ помощник",
 
     // Hero Section
-    awardWinning: "ОБЩЕСТВЕННЫЙ ЭКО-ТУРИЗМ NaturO В КЫРГЫЗСТАНЕ",
+    awardWinning: "ОБЩЕСТВЕННЫЙ ЭКО-ТУРИЗМ Nomad Travel В КЫРГЫЗСТАНЕ",
     heroTitlePart1: "Исследуйте Кыргызстан в его",
     heroTitlePart2: "Кочевом Духе",
-    heroSubtitle: "Позвольте себе подлинные экспедиции от местных сообществ NaturO, конные прогулки и уютные юрточные лагеря среди нетронутых пейзажей Кочкора и Сон-Куля.",
+    heroSubtitle: "Позвольте себе подлинные экспедиции от местных сообществ Nomad Travel, конные прогулки и уютные юрточные лагеря среди нетронутых пейзажей Кочкора и Сон-Куля.",
     whereTo: "Куда едем?",
     dates: "Даты",
     maxBudget: "Макс. Бюджет",
@@ -223,7 +223,7 @@ export const UI_TRANSLATIONS = {
     toursDesc: "Индивидуальные программы, разработанные для взыскательных путешественников. Каждый маршрут сопровождается экспертами и полностью компенсирует углеродный след.",
 
     // Why Us Section
-    whyTitle: "ПОЧЕМУ NATURO ELITE",
+    whyTitle: "ПОЧЕМУ NOMAD TRAVEL ELITE",
     whySubtitle: "Стандарт Абсолютной Заботы",
     whyDesc: "Обслуживание сообщества международных исследователей с высоким уровнем конфиденциальности, экологической ответственностью и безупречной логистикой.",
     stat1Title: "Эксклюзивные Пути",
@@ -247,10 +247,10 @@ export const UI_TRANSLATIONS = {
     faqSubtitle: "Часто Задаваемые Вопросы",
 
     // Chat
-    chatTitle: "ИИ-Консьерж",
-    chatSubtitle: "Элитный Архитектор Маршрутов",
-    chatPlaceholder: "Спросите о премиум-турах, погоде или кастомизации маршрута...",
-    chatIntro: "Приветствую! Я элитный ИИ-консьерж NaturO. Я могу составить индивидуальный маршрут, проверить погоду в реальном времени или изменить длительность тура.",
+    chatTitle: "ИИ помощник",
+    chatSubtitle: "Архитектор Индивидуальных Маршрутов",
+    chatPlaceholder: "Спросите о премиум-турах, погоде или изменении маршрута...",
+    chatIntro: "Приветствую! Я ИИ помощник Nomad Travel. Я могу составить индивидуальный маршрут, проверить погоду в реальном времени или изменить длительность тура.",
 
     // Modal / Checkout
     bookTour: "Забронировать Место",
@@ -268,7 +268,7 @@ export const UI_TRANSLATIONS = {
     close: "Закрыть",
 
     // Admin Panel UI
-    adminTitle: "Консоль Администрирования Контента NaturO",
+    adminTitle: "Консоль Администрирования Контента Nomad Travel",
     adminSubtitle: "Управление турами, направлениями, статьями и отзывами",
     addTour: "Создать Новый Тур",
     addDest: "Создать Новое Направление",

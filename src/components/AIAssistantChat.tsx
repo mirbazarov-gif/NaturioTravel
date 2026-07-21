@@ -28,8 +28,8 @@ export default function AIAssistantChat({ isOpen, setIsOpen, language }: AIAssis
   
   const getGreeting = () => {
     return isRu
-      ? "Добро пожаловать в NaturO. Я ваш элитный ИИ-консьерж. Я могу составить индивидуальный маршрут, рассчитать бюджет и порекомендовать удаленные эко-курорты класса люкс. Как я могу спланировать ваше следующее путешествие?"
-      : "Welcome to NaturO. I am your elite AI Travel Concierge. I can design bespoke itineraries, estimate budgets, and recommend remote ecoluxury destinations. How may I coordinate your next voyage today?";
+      ? "Добро пожаловать в Nomad Travel. Я ваш ИИ помощник. Я могу составить индивидуальный маршрут, рассчитать бюджет и порекомендовать удаленные эко-маршруты. Как я могу помочь вам спланировать путешествие?"
+      : "Welcome to Nomad Travel. I am your AI Assistant. I can design bespoke itineraries, estimate budgets, and recommend remote eco-tours. How may I help you coordinate your voyage today?";
   };
 
   const [messages, setMessages] = useState<Message[]>([
@@ -111,7 +111,7 @@ export default function AIAssistantChat({ isOpen, setIsOpen, language }: AIAssis
       setMessages((prev) => [...prev, assistantMsg]);
     } catch (error: any) {
       console.error(error);
-      setErrorText(isRu ? "Соединение с ИИ-консьержем прервано. Пожалуйста, попробуйте снова." : "Our connection to the AI Concierge timed out. Please retry.");
+      setErrorText(isRu ? "Соединение с ИИ помощником прервано. Пожалуйста, попробуйте снова." : "Our connection to the AI Assistant timed out. Please retry.");
     } finally {
       setIsLoading(false);
     }
@@ -145,11 +145,11 @@ export default function AIAssistantChat({ isOpen, setIsOpen, language }: AIAssis
           onClick={() => setIsOpen(!isOpen)}
           className="p-4 rounded-full bg-gradient-to-r from-deep-ocean to-turquoise text-white shadow-2xl hover:shadow-turquoise/30 hover:shadow-xl transition-all flex items-center gap-2 cursor-pointer border border-white/20"
           id="chat-launcher-btn"
-          title="Open AI Concierge"
+          title="Open AI Assistant"
         >
           <Sparkles className="w-5 h-5 animate-pulse" />
           <span className="text-xs font-bold uppercase tracking-widest hidden md:inline">
-            {isRu ? "ИИ Консьерж" : "AI Concierge"}
+            {isRu ? "ИИ помощник" : "AI Assistant"}
           </span>
         </motion.button>
       </div>
@@ -172,11 +172,11 @@ export default function AIAssistantChat({ isOpen, setIsOpen, language }: AIAssis
                 </div>
                 <div>
                   <h3 className="text-xs font-bold uppercase tracking-widest text-white flex items-center gap-1.5">
-                    <span>{isRu ? "ИИ-Консьерж NaturO" : "NaturO AI Concierge"}</span>
+                    <span>{isRu ? "ИИ помощник Nomad Travel" : "Nomad Travel AI Assistant"}</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                   </h3>
                   <span className="text-[10px] text-slate-400 font-semibold uppercase">
-                    {isRu ? "Планировщик Люкс-Маршрутов" : "Luxury Expedition Planner"}
+                    {isRu ? "Кастомизация Маршрутов" : "Bespoke Expedition Assistant"}
                   </span>
                 </div>
               </div>

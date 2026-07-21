@@ -233,7 +233,7 @@ export default function App() {
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center text-white">
         <Compass className="w-16 h-16 text-turquoise animate-spin mb-4" />
         <h2 className="text-xl font-bold tracking-widest bg-gradient-to-r from-turquoise to-white bg-clip-text text-transparent uppercase">
-          NaturO Elite
+          Nomad Travel Elite
         </h2>
         <p className="text-xs text-slate-500 font-mono tracking-wider mt-1">Configuring Immersive Ecosystem...</p>
       </div>
@@ -283,22 +283,22 @@ export default function App() {
                     tours={tours}
                   />
                   
-                  {/* Majestic Multi-Page Welcome Block explaining NaturO Community Mission */}
+                  {/* Majestic Multi-Page Welcome Block explaining Nomad Travel Community Mission */}
                   <section className="py-20 max-w-7xl mx-auto px-4 md:px-8 border-t border-slate-100 dark:border-slate-900/60 mt-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                       <div className="space-y-6">
                         <span className="text-xs font-extrabold text-turquoise tracking-widest uppercase block">
-                          {language === "RU" ? "ЭКОЛОГИЧЕСКАЯ МИССИЯ" : "OUR CONSERVATION CUSTODY"}
+                          {language === "RU" ? "ИСКУССТВО ЭКСПЕДИЦИЙ" : "THE ART OF BESPOKE EXPEDITIONS"}
                         </span>
                         <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
                           {language === "RU" 
-                            ? "Возрождение туризма через заботу о местной культуре" 
-                            : "Redefining Travel Through Local Ownership"}
+                            ? "Безупречные путешествия по Центральной Азии" 
+                            : "Bespoke Journeys Across Central Asia"}
                         </h2>
                         <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
                           {language === "RU"
-                            ? "NaturO — это не просто туры, а социальный проект поддержки отдаленных сообществ Кыргызстана. 100% доходов от проживания в юртах, аренды лошадей и услуг гидов напрямую поступает местным чабанам и их семьям."
-                            : "NaturO operates hand-in-hand with nomadic shepherds in Kochkor and Song-Kul lake valleys. Every horse trek, traditional meal, and yurt stay is owned and hosted by local families, keeping profits completely within the mountain communities."}
+                            ? "Nomad Travel разрабатывает премиальные, уединенные экспедиции по самым захватывающим и потаенным уголкам Кыргызстана. От приватных юрточных лагерей на берегу озера до индивидуальных высокогорных маршрутов — мы гарантируем безупречное исполнение."
+                            : "Nomad Travel designs outstanding, secluded expeditions across Kyrgyzstan. We deliver an unmatched standard of privacy, custom luxury, and safety in the wilderness."}
                         </p>
                         <div className="flex flex-wrap gap-4 pt-2">
                           <button
@@ -354,7 +354,7 @@ export default function App() {
                       {language === "RU" ? "ГЕОГРАФИЯ ЧУДЕС" : "GEOGRAPHIC SANCTUARIES"}
                     </span>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
-                      {language === "RU" ? "Направления NaturO" : "NaturO Destinations"}
+                      {language === "RU" ? "Направления Nomad Travel" : "Nomad Travel Destinations"}
                     </h1>
                     <p className="text-slate-500 dark:text-slate-400">
                       {language === "RU" 
@@ -378,7 +378,7 @@ export default function App() {
                         {language === "RU" ? "НАШИ ЭКСПЕДИЦИИ" : "EXPEDITION REGISTER"}
                       </span>
                       <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
-                        {language === "RU" ? "Каталог Приключений" : "NaturO Expeditions"}
+                        {language === "RU" ? "Каталог Приключений" : "Nomad Travel Expeditions"}
                       </h1>
                       <p className="text-slate-500 dark:text-slate-400">
                         {language === "RU" 
@@ -445,10 +445,10 @@ export default function App() {
                   <div className="max-w-7xl mx-auto px-4 md:px-8">
                     <div className="text-center max-w-3xl mx-auto">
                       <span className="px-3 py-1 bg-turquoise/15 text-turquoise text-[11px] font-extrabold rounded-full uppercase tracking-widest block w-fit mx-auto mb-4">
-                        {language === "RU" ? "О НАШЕМ СЕМЕЙСТВЕ" : "THE NATURO MANIFESTO"}
+                        {language === "RU" ? "О НАШЕМ СЕМЕЙСТВЕ" : "THE NOMAD TRAVEL MANIFESTO"}
                       </span>
                       <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
-                        {language === "RU" ? "Стандарты Качества" : "Why Choose NaturO"}
+                        {language === "RU" ? "Стандарты Качества" : "Why Choose Nomad Travel"}
                       </h1>
                       <p className="text-slate-500 dark:text-slate-400">
                         {language === "RU" 

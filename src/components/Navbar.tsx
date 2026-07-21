@@ -54,7 +54,6 @@ export default function Navbar({
     { label: t.navDestinations, id: "destinations" },
     { label: t.navTours, id: "tours" },
     { label: t.navEvents, id: "events" },
-    { label: t.navAbout, id: "about" },
   ];
 
   const handleNavItemClick = (id: string) => {

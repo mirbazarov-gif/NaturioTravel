@@ -38,6 +38,14 @@ export default function AdminPanel({
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
+  // Custom state-based delete confirmation dialog
+  const [deleteConfirm, setDeleteConfirm] = useState<{
+    isOpen: boolean;
+    type: "item" | "booking";
+    id: string;
+    message: string;
+  } | null>(null);
+
   // Admin authentication states
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
     return sessionStorage.getItem("naturo_admin_authenticated") === "true";
@@ -125,7 +133,7 @@ export default function AdminPanel({
     readTimeRU: "5 мин чтения",
     categoryEN: "Eco-Luxe",
     categoryRU: "Эко-Люкс",
-    author: "NaturO Specialist",
+    author: "Nomad Travel Specialist",
     excerptEN: "",
     excerptRU: ""
   });
@@ -253,21 +261,13 @@ export default function AdminPanel({
     }
   };
 
-  const handleDeleteBooking = async (id: string) => {
-    if (!window.confirm(language === "RU" ? "Вы уверены, что хотите удалить это бронирование?" : "Are you sure you want to delete this booking?")) return;
-    try {
-      const res = await fetch(`/api/bookings/${id}`, {
-        method: "DELETE"
-      });
-      if (res.ok) {
-        showFeedback("success", language === "RU" ? "Бронирование удалено!" : "Booking deleted!");
-        fetchBookings();
-      } else {
-        throw new Error("Failed to delete booking");
-      }
-    } catch (err: any) {
-      showFeedback("error", err.message);
-    }
+  const handleDeleteBooking = (id: string) => {
+    setDeleteConfirm({
+      isOpen: true,
+      type: "booking",
+      id,
+      message: language === "RU" ? "Вы уверены, что хотите удалить это бронирование?" : "Are you sure you want to delete this booking?"
+    });
   };
 
   // LOAD FOR EDITING
@@ -445,19 +445,77 @@ export default function AdminPanel({
     }
   };
 
+  // Image upload from local computer
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, formType: "tour" | "dest" | "testi" | "blog") => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    showFeedback("success", language === "RU" ? "Загрузка изображения..." : "Uploading image...");
+
+    const reader = new FileReader();
+    reader.onload = async () => {
+      try {
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ image: reader.result })
+        });
+        if (!res.ok) throw new Error("Upload failed");
+        const data = await res.json();
+        
+        if (formType === "tour") {
+          setTourForm(prev => ({ ...prev, image: data.url }));
+        } else if (formType === "dest") {
+          setDestForm(prev => ({ ...prev, image: data.url }));
+        } else if (formType === "testi") {
+          setTestiForm(prev => ({ ...prev, avatar: data.url }));
+        } else if (formType === "blog") {
+          setBlogForm(prev => ({ ...prev, image: data.url }));
+        }
+        
+        showFeedback("success", language === "RU" ? "Изображение успешно загружено!" : "Image uploaded successfully!");
+      } catch (err: any) {
+        showFeedback("error", language === "RU" ? "Ошибка при загрузке: " + err.message : "Upload error: " + err.message);
+      }
+    };
+    reader.readAsDataURL(file);
+  };
+
   // DELETE TRIGGER
-  const handleDelete = async (id: string) => {
-    if (!window.confirm(t.confirmDelete)) return;
+  const handleDelete = (id: string) => {
+    setDeleteConfirm({
+      isOpen: true,
+      type: "item",
+      id,
+      message: t.confirmDelete || "Are you sure you want to delete this item?"
+    });
+  };
+
+  const handleConfirmDeleteAction = async () => {
+    if (!deleteConfirm) return;
+    const { id, type } = deleteConfirm;
+    
     try {
-      const apiType = activeTab === "blogs" ? "blogPosts" : activeTab;
-      const res = await fetch(`/api/${apiType}/${id}`, {
-        method: "DELETE"
-      });
-      if (!res.ok) throw new Error("Delete request failed.");
-      await onRefreshAll();
-      showFeedback("success", "Item deleted successfully!");
+      if (type === "item") {
+        const apiType = activeTab === "blogs" ? "blogPosts" : activeTab;
+        const res = await fetch(`/api/${apiType}/${id}`, {
+          method: "DELETE"
+        });
+        if (!res.ok) throw new Error("Delete request failed.");
+        await onRefreshAll();
+        showFeedback("success", language === "RU" ? "Успешно удалено!" : "Item deleted successfully!");
+      } else {
+        const res = await fetch(`/api/bookings/${id}`, {
+          method: "DELETE"
+        });
+        if (!res.ok) throw new Error("Failed to delete booking");
+        showFeedback("success", language === "RU" ? "Бронирование удалено!" : "Booking deleted!");
+        fetchBookings();
+      }
     } catch (err: any) {
-      showFeedback("error", err.message || "Failed to delete item.");
+      showFeedback("error", err.message || "Failed to delete.");
+    } finally {
+      setDeleteConfirm(null);
     }
   };
 
@@ -486,7 +544,7 @@ export default function AdminPanel({
                   <h2 className="text-lg font-bold tracking-tight bg-gradient-to-r from-turquoise to-teal-300 bg-clip-text text-transparent uppercase">
                     {language === "RU" ? "Панель управления" : "Admin Portal"}
                   </h2>
-                  <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">NaturO Elite Ecosystem</p>
+                  <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Nomad Travel Elite Ecosystem</p>
                 </div>
               </div>
               <button
@@ -544,7 +602,7 @@ export default function AdminPanel({
 
             <div className="mt-6 text-center relative z-10">
               <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-widest">
-                🔒 NaturO SECURITY PANEL
+                🔒 NOMAD TRAVEL SECURITY PANEL
               </span>
             </div>
           </motion.div>
@@ -710,8 +768,37 @@ export default function AdminPanel({
                       </div>
 
                       <div>
-                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">{t.imageField}</label>
-                        <input type="text" required value={tourForm.image} onChange={e => setTourForm({ ...tourForm, image: e.target.value })} className="w-full bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise" />
+                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">
+                          {language === "RU" ? "Изображение (Ссылка или Файл)" : "Image (URL or File)"}
+                        </label>
+                        <div className="space-y-2">
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              required
+                              value={tourForm.image}
+                              onChange={e => setTourForm({ ...tourForm, image: e.target.value })}
+                              className="flex-1 bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise"
+                              placeholder="https://..."
+                            />
+                            <label className="px-4 py-2.5 bg-slate-800 hover:bg-slate-750 border border-slate-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-all select-none">
+                              <Upload className="w-4 h-4 text-turquoise" />
+                              <span>{language === "RU" ? "Файл" : "File"}</span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={e => handleImageUpload(e, "tour")}
+                              />
+                            </label>
+                          </div>
+                          {tourForm.image && (
+                            <div className="flex items-center gap-3 p-2 bg-slate-950/40 rounded-xl border border-slate-800/60">
+                              <img src={tourForm.image} className="w-10 h-10 object-cover rounded-lg" referrerPolicy="no-referrer" />
+                              <span className="text-[10px] text-slate-400 font-mono truncate max-w-[200px]">{tourForm.image}</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
 
                       <div>
@@ -786,8 +873,37 @@ export default function AdminPanel({
                         <input type="text" required value={destForm.countryRU} onChange={e => setDestForm({ ...destForm, countryRU: e.target.value })} className="w-full bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise" />
                       </div>
                       <div className="col-span-2">
-                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">{t.imageField}</label>
-                        <input type="text" required value={destForm.image} onChange={e => setDestForm({ ...destForm, image: e.target.value })} className="w-full bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise" />
+                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">
+                          {language === "RU" ? "Изображение (Ссылка или Файл)" : "Image (URL or File)"}
+                        </label>
+                        <div className="space-y-2">
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              required
+                              value={destForm.image}
+                              onChange={e => setDestForm({ ...destForm, image: e.target.value })}
+                              className="flex-1 bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise"
+                              placeholder="https://..."
+                            />
+                            <label className="px-4 py-2.5 bg-slate-800 hover:bg-slate-750 border border-slate-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-all select-none">
+                              <Upload className="w-4 h-4 text-turquoise" />
+                              <span>{language === "RU" ? "Файл" : "File"}</span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={e => handleImageUpload(e, "dest")}
+                              />
+                            </label>
+                          </div>
+                          {destForm.image && (
+                            <div className="flex items-center gap-3 p-2 bg-slate-950/40 rounded-xl border border-slate-800/60">
+                              <img src={destForm.image} className="w-10 h-10 object-cover rounded-lg" referrerPolicy="no-referrer" />
+                              <span className="text-[10px] text-slate-400 font-mono truncate max-w-[200px]">{destForm.image}</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                       <div>
                         <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">{t.priceField} From ($ USD)</label>
@@ -820,8 +936,37 @@ export default function AdminPanel({
                         <input type="text" required value={testiForm.name} onChange={e => setTestiForm({ ...testiForm, name: e.target.value })} className="w-full bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise" />
                       </div>
                       <div>
-                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Avatar Image URL</label>
-                        <input type="text" required value={testiForm.avatar} onChange={e => setTestiForm({ ...testiForm, avatar: e.target.value })} className="w-full bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise" />
+                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">
+                          {language === "RU" ? "Аватар (Ссылка или Файл)" : "Avatar (URL or File)"}
+                        </label>
+                        <div className="space-y-2">
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              required
+                              value={testiForm.avatar}
+                              onChange={e => setTestiForm({ ...testiForm, avatar: e.target.value })}
+                              className="flex-1 bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise"
+                              placeholder="https://..."
+                            />
+                            <label className="px-4 py-2.5 bg-slate-800 hover:bg-slate-750 border border-slate-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-all select-none">
+                              <Upload className="w-4 h-4 text-turquoise" />
+                              <span>{language === "RU" ? "Файл" : "File"}</span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={e => handleImageUpload(e, "testi")}
+                              />
+                            </label>
+                          </div>
+                          {testiForm.avatar && (
+                            <div className="flex items-center gap-3 p-2 bg-slate-950/40 rounded-xl border border-slate-800/60">
+                              <img src={testiForm.avatar} className="w-10 h-10 object-cover rounded-lg" referrerPolicy="no-referrer" />
+                              <span className="text-[10px] text-slate-400 font-mono truncate max-w-[200px]">{testiForm.avatar}</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                       <div>
                         <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Guest Role (EN)</label>
@@ -886,8 +1031,37 @@ export default function AdminPanel({
                         <input type="text" required value={blogForm.categoryRU} onChange={e => setBlogForm({ ...blogForm, categoryRU: e.target.value })} className="w-full bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise" />
                       </div>
                       <div className="col-span-2">
-                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">{t.imageField}</label>
-                        <input type="text" required value={blogForm.image} onChange={e => setBlogForm({ ...blogForm, image: e.target.value })} className="w-full bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise" />
+                        <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">
+                          {language === "RU" ? "Изображение (Ссылка или Файл)" : "Image (URL or File)"}
+                        </label>
+                        <div className="space-y-2">
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              required
+                              value={blogForm.image}
+                              onChange={e => setBlogForm({ ...blogForm, image: e.target.value })}
+                              className="flex-1 bg-slate-850 border border-slate-750 p-2.5 rounded-xl text-sm focus:outline-none focus:border-turquoise"
+                              placeholder="https://..."
+                            />
+                            <label className="px-4 py-2.5 bg-slate-800 hover:bg-slate-750 border border-slate-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer transition-all select-none">
+                              <Upload className="w-4 h-4 text-turquoise" />
+                              <span>{language === "RU" ? "Файл" : "File"}</span>
+                              <input
+                                type="file"
+                                accept="image/*"
+                                className="hidden"
+                                onChange={e => handleImageUpload(e, "blog")}
+                              />
+                            </label>
+                          </div>
+                          {blogForm.image && (
+                            <div className="flex items-center gap-3 p-2 bg-slate-950/40 rounded-xl border border-slate-800/60">
+                              <img src={blogForm.image} className="w-10 h-10 object-cover rounded-lg" referrerPolicy="no-referrer" />
+                              <span className="text-[10px] text-slate-400 font-mono truncate max-w-[200px]">{blogForm.image}</span>
+                            </div>
+                          )}
+                        </div>
                       </div>
                       <div className="col-span-2">
                         <label className="block text-[10px] uppercase font-bold text-slate-400 mb-1">Author Name</label>
@@ -1185,6 +1359,44 @@ export default function AdminPanel({
           </div>
         </motion.div>
       </div>
+
+      {/* Custom Delete Confirmation Modal */}
+      <AnimatePresence>
+        {deleteConfirm?.isOpen && (
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 15 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 15 }}
+              className="bg-slate-900 border border-slate-800 w-full max-w-sm p-6 rounded-2xl shadow-2xl text-white text-center"
+            >
+              <div className="w-12 h-12 rounded-full bg-red-500/10 border border-red-500/25 flex items-center justify-center mx-auto mb-4 text-red-500">
+                <Trash2 className="w-6 h-6 animate-pulse" />
+              </div>
+              <h4 className="text-sm font-bold uppercase tracking-wider mb-2">
+                {language === "RU" ? "Подтверждение удаления" : "Confirm Deletion"}
+              </h4>
+              <p className="text-xs text-slate-400 mb-6 font-medium">
+                {deleteConfirm.message}
+              </p>
+              <div className="flex gap-3 justify-center">
+                <button
+                  onClick={() => setDeleteConfirm(null)}
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-750 text-slate-300 rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer transition-all"
+                >
+                  {language === "RU" ? "Отмена" : "Cancel"}
+                </button>
+                <button
+                  onClick={handleConfirmDeleteAction}
+                  className="px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer transition-all shadow-lg hover:shadow-red-500/20"
+                >
+                  {language === "RU" ? "Удалить" : "Delete"}
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </AnimatePresence>
   );
 }
